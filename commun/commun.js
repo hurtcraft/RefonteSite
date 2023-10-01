@@ -18,7 +18,7 @@ function CreateNavBar(){
         
         NavBar.appendChild(link);
     }
-    //addImageNavBarContainer();
+    addImageNavBarContainer();
 }
 function addImageNavBarContainer(){
     let img = new Image();
@@ -30,6 +30,7 @@ function addImageNavBarContainer(){
 function getBanniere(){
     let banniere=new Image();
     banniere.src="../img/banniereBeauvais.png";
+    banniere.id="banniere"
     return banniere;
 }
 CreateNavBar();

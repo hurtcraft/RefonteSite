@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#NavBar{
+    display: grid;
+    width: 100vw;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: 4;
+    background-color: red;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.btnMenu{
+    text-decoration: none;
+    background-color: yellow;
+    border: solid black 1px;
+    text-align: center;
+}
+
+#NavBarContent{
+    background-color: blue;
+    width: 100%;
+    height: 60vh;
+}
+#imgTampon{
+    width: 100%;
+}

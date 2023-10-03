@@ -1,5 +1,27 @@
 const NavBar=document.getElementById("NavBar");
 const NavBarContent=document.getElementById("NavBarContent");
+const Bannieres=document.querySelectorAll('.banniere')
+
+///pas tres propre je corrigerai plus tard jv dodo 
+//mai ca fonctionne, j'encapsulerai le tout dans une fonction 
+const Observer=new IntersectionObserver((entries)=>{
+    for(const entry of entries){
+        let arrow;
+        console.log(entry)
+        if(entry.isIntersecting){
+            arrow=entry.target.querySelector(".arrow");
+            arrow.style.animation="slide_right 1.5s ease-in-out";
+            arrow.addEventListener("animationend",()=>{arrow.style.animation=""});
+        }
+
+    }
+})
+Bannieres.forEach((b)=> {
+    Observer.observe(b)
+});
+//jusquici
+
+
 function CreateNavBar(){
     const lstBtnSections= ["Accueil","Transport","Activites","Ecologie","Plan Climat","Economie","Habitat","Politique de la Ville"];
     NavBar.appendChild(getBanniere());
@@ -18,7 +40,7 @@ function CreateNavBar(){
         
         NavBar.appendChild(link);
     }
-    addImageNavBarContainer();
+    //addImageNavBarContainer();
 }
 function addImageNavBarContainer(){
     let img = new Image();
@@ -30,7 +52,7 @@ function addImageNavBarContainer(){
 function getBanniere(){
     let banniere=new Image();
     banniere.src="../img/banniereBeauvais.png";
-    banniere.id="banniere"
+    banniere.id="logo"
     return banniere;
 }
 CreateNavBar();

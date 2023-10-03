@@ -10,7 +10,7 @@
 }
 #NavBar{
     display: grid;
-    width: 100vw;
+    width: 100%;
     grid-template-columns: repeat(9,1fr);
     grid-template-rows: 4;
     background-color: rgb(131, 131, 131);
@@ -33,12 +33,34 @@
     transform: scale(1.4);
     transition: 0.3s;
 }
-#banniere{
+#logo{
     transition: 0.3s;
 }
-#banniere:hover{
+#logo:hover{
     transform: scale(1.1);
     transition: 0.3s;
+}
+.banniere{
+    background-color:#1F1F1F ;
+}
+.arrow{
+    display: flex;
+    width: 45%;
+
+}
+.square{
+    width: 70%;
+    background-color: #CF1414;
+}
+.triangle{
+    width: 30%;
+    padding-bottom: 50%; /* Cela garantit que la hauteur est égale à la moitié de la largeur, créant ainsi un triangle équilatéral */
+    background-color: #CF1414;
+    clip-path: polygon(0 0, 100% 50%, 0% 100%);
+    margin-left: -1px;
+}
+.slideRightElt{
+    animation:slide_right 1s ease-in-out
 }
 @keyframes apparition_anime {
     100%{
@@ -46,3 +68,13 @@
         transform: none;
     }
 }
+@keyframes slide_right {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }

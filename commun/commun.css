@@ -10,7 +10,7 @@
 }
 #NavBar{
     display: grid;
-    width: 100vw;
+    width: 100%;
     grid-template-columns: repeat(9,1fr);
     grid-template-rows: 4;
     background-color: rgb(131, 131, 131);

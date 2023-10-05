@@ -4,6 +4,7 @@ const navBar=document.getElementById("NavBar");
 const divMeteo=document.getElementById("meteo");
 const divTemperature=document.getElementById("temperature");
 const meteoIcon=document.getElementById("meteoIcon")
+const baniereActus=document.getElementById("banniere");
 // const WEATHER_API_KEY="7d4fed23c3b77156f7cc9ac02a44fc32";
 const WEATHER_API_URL="https://api.openweathermap.org/data/2.5/weather?&units=metric&lang=french"
 const map_weather={"Snow":"img/meteo/neige.png",
@@ -21,8 +22,19 @@ async function getMeteo(){
 
 }
 
-function initMeteo(){
-    let div
+function actu(){
+    const NbActus=5;
+    const actusContainer=document.getElementById("actusContainer");
+    for(let i = 0; i <NbActus;i++){
+        actusContainer.appendChild(createActu());
+    }
+}
+function createActu(){
+    let div =document.createElement("div");
+    div.classList.add("actu");
+    div.innerText="actu";
+    return div;
 }
 
 getMeteo();
+actu();

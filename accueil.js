@@ -32,7 +32,7 @@ function actu(){
 function createActu(){
     let div =document.createElement("div");
     div.classList.add("actu");
-    div.innerText="actu";
+    div.innerText="   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, dolor";
     return div;
 }
 

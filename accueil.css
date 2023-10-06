@@ -34,17 +34,21 @@
     object-fit: cover;
 
 }
-#actusContainer{
+#actusContainer {
+
     width: 100%;
-    position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    background-color: blue;
+    transform: translateX(-25%);
+    z-index: 3;
 
 }
 .actu{
+    
     width: 15%;
-    height: 300px;
+    height: 100%;
     background-color: white;
     border: solid black 1px;
 

@@ -10,18 +10,25 @@
 </head>
 <body>
     
-    <video autoplay loop muted id = "video">
+    <video preload autoplay loop muted id = "video">
         <source src="./video/BeauvaisVideo.mp4" type="video/mp4" />
     </video>
 
     <div id="NavBarContainer">
-
+        <img src="./img/banniereBeauvais.png" alt="" id = "logo">
         <nav id = NavBar>
+            
             <div id="meteo">
                 <img id="meteoIcon" src="" alt="">
                 <h3 id ="temperature"></h3>
             </div>
         </nav>
+
+        <div id = "hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
 
 
     </div>
@@ -36,12 +43,9 @@
 
 
         <div class="banniereContent">
-            <div id="actusContainer">
-        </div></div>
-        
+            <div id ="actusContainer"></div>
+        </div>
     </div>
-
-
 
     <script src="commun/commun.js"></script>
     <script type="module" src="accueil.js"></script>

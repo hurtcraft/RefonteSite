@@ -1,14 +1,17 @@
 import {WEATHER_API_KEY} from "./config.js";
 import { actuDatas } from "./accueilData.js";
-const navBar=document.getElementById("NavBar");
-const divMeteo=document.getElementById("meteo");
+//const navBar=document.getElementById("NavBar");
+//const divMeteo=document.getElementById("meteo");
 const divTemperature=document.getElementById("temperature");
 const meteoIcon=document.getElementById("meteoIcon")
-const baniereActus=document.getElementById("banniere");
+const currentDescContainer=document.getElementById("currentDescContainer");
+const currentImgContainer=document.getElementById("currentImgContainer");
+const escapeActuBtn=document.getElementById("escapeActuBtn");
+//const baniereActus=document.getElementById("banniere");
 
 
-const fluxRss="https://news.google.com/rss/search?q=Beauvais&hl=fr&gl=FR&ceid=FR:fr";
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+//const fluxRss="https://news.google.com/rss/search?q=Beauvais&hl=fr&gl=FR&ceid=FR:fr";
+//const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
 // const WEATHER_API_KEY="7d4fed23c3b77156f7cc9ac02a44fc32";
 const WEATHER_API_URL="https://api.openweathermap.org/data/2.5/weather?&units=metric&lang=french"
@@ -27,7 +30,7 @@ async function getMeteo(){
 
 }
 
-function actu(){
+function actus(){
     let title;
     let desc;
     let imgSrc;
@@ -37,8 +40,7 @@ function actu(){
         title=actuDatas[i].title;
         desc=actuDatas[i].desc;
         imgSrc=actuDatas[i].img;
-        console.log(actuDatas[i]);
-        actusContainer.appendChild(createActu(title,imgSrc,"desc"));
+        actusContainer.appendChild(createActu(title,imgSrc,desc));
     }
 }
 function createActu(title,imgSrc,desc){
@@ -46,6 +48,10 @@ function createActu(title,imgSrc,desc){
     const img= document.createElement("img");
     const header=document.createElement("h2");
     const data=document.createTextNode(desc);
+    const p = document.createElement("p");
+    p.classList.add("desc");
+    p.appendChild(data);
+    
     header.textContent=document.createTextNode(title).nodeValue;
     header.classList.add("headerActu");
 
@@ -57,23 +63,58 @@ function createActu(title,imgSrc,desc){
 
     div.appendChild(header);
     div.appendChild(img);
-    div.appendChild(data);
+    div.appendChild(p);
 
     return div;
 }
-//marche pas
-async function fetchActu(){
-    //marche pas
-    var headers = {};
-    const reponse=await fetch(fluxRss,{
-        method : "GET",
-        mode: 'no-cors',
-        headers: headers
-    });
-    const data=reponse.text();
-    console.log(data);
-}
+
+
 getMeteo();
-actu();
-//fetchActu();
+
+
+
+actus();
+const allActus=document.querySelectorAll(".actu");
+
+allActus.forEach(actu => {
+    actu.addEventListener("click",()=>{
+        allActus.forEach(elt=>{
+            
+            elt.classList.add("displayNoneElt");
+                
+            
+            currentImgContainer.src=actu.querySelector("img").src;
+            currentImgContainer.style.display="flex";
+
+
+
+            currentDescContainer.innerText=actu.querySelector("p").innerText;
+            currentDescContainer.style.display="flex";
+
+
+            escapeActuBtn.style.display="flex";
+
+
+        })
+    })
+});
+
+escapeActuBtn.addEventListener("click",()=>{
+    allActus.forEach(elt=>{
+            
+        elt.classList.remove("displayNoneElt");
+
+
+        currentImgContainer.style.display="none";
+        currentDescContainer.style.display="none";
+        escapeActuBtn.style.display="none";
+        
+
+
+    
+    })    
+})
+
+
+
 

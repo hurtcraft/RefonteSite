@@ -1,0 +1,40 @@
+{
+    "qualites" : [
+        {
+            "id" : "horaire",
+            "titre" : "NOUS RESPECTONS LES HORAIRES",
+            "description" : "Nos bus passent à l'horaire prévu. En cas de travaux, de circulation ou d'intempéries, le conducteur veille à respecter au mieux les horaires affichés en toute sécurité.",
+            "image" : "https://www.corolis.fr/img/galerie/images/respect-horaires.png"
+        },
+        {
+            "id" : "propre",
+            "titre" : "NOS VÉHICULES SONT PROPRES",
+            "description" : "Nous nous engageons à mettre des véhicules propres et sans odeurs incommodantes. Le nettoyage est adapté en fonction des conditions climatiques.",
+            "image" : "https://www.corolis.fr/img/galerie/images/vehicules-propres.png"
+        },
+        {
+            "id" : "informe",
+            "titre" : "VOUS ÊTES BIEN INFORMÉS",
+            "description" : "Les horaires sont affichés aux points d'arrêt. Les fiches horaires et les tarifs sont à votre disposition à l'Agence Commerciale Corolis.\n Le règlement intérieur figure dans tous nos véhicules.Les cadres d'information vous donnent les dernières nouvelles du réseau.",
+            "image" : "https://www.corolis.fr/img/galerie/images/bien-informe.png"
+        },
+        {
+            "id" : "acceil",
+            "titre" : "VOUS ÊTES BIEN ACCUEILLIS",
+            "description" : "En agence commerciale, nos agents d'accueil sont disponibles et courtois.\n Ils doivent proposer une solution adaptée au besoin du client et l'informer de façon précise.\n A bord de nos véhicules, nos conducteurs doivent respecter 3 gestes commerciaux :\n    • le regard porté aux voyageurs entrants,\n    • la politesse,\n    • la disponibilité pour la vente de titres de transport et demande de renseignements.",
+            "image" : "https://www.corolis.fr/img/galerie/images/bien-acceuili.png"
+        },
+        {
+            "id" : "securite",
+            "titre" : "NOUS CONTRÔLONS ET ASSURONS VOTRE CONFORT ET VOTRE SÉCURITÉ",
+            "description" : "Toutes nos lignes sont contrôlées par des agents assermentés. Ils ont pour mission de veiller quotidiennement au bon respect des différents critères qualités (la régularité, la propreté, le confort… ) afin de garantir à nos clients voyageurs une qualité de service optimale. Ils s'assurent que chaque client soit en possession d'un titre de transport valide.\n Ils sont à l'écoute des voyageurs afin de les orienter ou de les informer.",
+            "image" : "https://www.corolis.fr/img/galerie/images/controlons-qualite.png"
+        },
+        {
+            "id" : "environnement",
+            "titre" : "NOUS RESPECTONS L'ENVIRONNEMENT",
+            "description" : "COROLIS s'engage à réduire la consommation et les émissions polluantes, en assurant un suivi technique rigoureux de l'ensemble de son parc.\n Nous nous engageons à intégrer le respect de l'environnement dans l'ensemble du fonctionnement de l'entreprise et optimisons l'utilisation des ressources naturelles (eau, électricité…).",
+            "image" : "https://www.corolis.fr/img/galerie/images/respect-environnement.png"
+        }
+    ]
+}

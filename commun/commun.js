@@ -62,9 +62,10 @@ document.addEventListener("scroll",()=>{
     if(window.scrollY>200){
         NavBar.classList.add("highLightNavBar");
         //NavBar.querySelectorAll("a").forEach((elt)=>{elt.style.color="aliceblue"});
+        NavBar.style.transition="0.5s";
         NavBar.querySelector("#meteo").style.filter="invert(100%)"; 
         //NavBar.querySelectorAll("a").forEach((elt)=>{elt.style.color="aliceblue"});
-        NavBar.style.transition="0.5s";
+        
     }
 
     else{

@@ -8,8 +8,8 @@ const Observer=new IntersectionObserver((entries)=>{
     for(const entry of entries){
         let arrow;
         let contents=entry.target.querySelector(".banniereContent");
-        console.log(contents);
         if(entry.isIntersecting){
+            console.log(entry.target);
             arrow=entry.target.querySelector(".arrow");
             arrow.style.animation="slide_right 1.5s ease-in-out";
             arrow.addEventListener("animationend",()=>{

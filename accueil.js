@@ -1,5 +1,5 @@
 import {WEATHER_API_KEY} from "./config.js";
-import { actuDatas } from "./accueilData.js";
+import { actuDatas,mapDatas,chiffresEconomiques } from "./accueilData.js";
 //const navBar=document.getElementById("NavBar");
 //const divMeteo=document.getElementById("meteo");
 const divTemperature=document.getElementById("temperature");
@@ -116,5 +116,78 @@ escapeActuBtn.addEventListener("click",()=>{
 })
 
 
+//section carte intéractive
 
+const mapDataContainer=document.getElementById("mapContent");
+const regions=document.querySelectorAll("path");
+regions.forEach(r=>{
+    
+    r.addEventListener("click",()=>{
+        mapDataContainer.style.animation="slide_left 0.5s";
+        
+        mapDataContainer.textContent=mapDatas[r.id];
+        
+        mapDataContainer.addEventListener("animationend",()=>{
+            mapDataContainer.style.animation="";
+        })
+    })
+})
+//section chiffre eco
 
+const chiffreEcoContainer=document.getElementById("chiffreEco");
+const chiffreContainers=chiffreEcoContainer.querySelectorAll("[container]");
+console.log(chiffreContainers);
+const Observer=new IntersectionObserver((entries)=>{
+    for(const entry of entries){
+        let title;
+        let chiffre;
+        if(entry.isIntersecting){
+            chiffreContainers.forEach(c=>{
+                let x=chiffresEconomiques[c.id];
+
+                title=c.querySelector(".title");
+                chiffre=c.querySelector(".chiffre");
+                c.style.animation="apparition_anime 1s";
+                
+                defilementChiffre(chiffre,x,100);
+                c.addEventListener("animationend",()=>{
+                    c.style.animation="";
+                })
+                
+            })
+            
+        }
+    }
+})
+chiffreContainers.forEach(c=>{
+    Observer.observe(c);
+})
+function defilementChiffre(container,x,delay){
+    let i = 0
+    function defilement(){
+        if(i<delay){
+            i++;
+            container.textContent=randomInt(x);
+            setTimeout(defilement,10);
+        }
+        else{
+            if(x===80){
+                container.textContent=x+"M";    
+            }
+            else{
+                container.textContent=x;
+
+            }
+
+        }
+    }
+    defilement();
+}
+function randomInt(max){
+    return Math.floor(Math.random()*max);
+}
+
+//section agenda
+
+const planning=document.getElementById("planning");
+const planningContent=document.getElementById("planningContent");

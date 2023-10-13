@@ -19,6 +19,7 @@
     
 }
 .highLightNavBar{
+    z-index: 5;
     background-color: #1F1F1F;
     z-index: 99;
 }

@@ -1,0 +1,218 @@
+:root{
+    --width-screen : 0;
+    --negative-width-screen : 0;
+    --bg-color : #1F1F1F;
+}
+
+*{
+    /* background-color: var(--bg-color); */
+    /* background-color: rgba(255, 0, 0, 0.1); */
+    /* outline: solid red; */
+}
+
+.qualite > h1{
+    color: red;
+}
+
+#topImg{
+    width: 100%;
+}
+
+.container{
+    /* -5px parce que sans il y a un espace blanc entre l'image et mon container */
+    margin-top: -5px;
+    background-color: var(--bg-color);
+}
+
+#qualiteServiceConainer{
+    /* background-color: var(--bg-color); */
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+}
+
+#qualiteServiceConainer > div{
+    display: block;
+    border: 2px solid rgb(233, 171, 88);
+}
+
+
+.qualite{
+    /* padding: 50%; */
+    /* vertical-align: top; */
+    /* outline: rebeccapurple solid; */
+    /* border-radius: 5px;
+    width: calc(100%/6);
+    height: 100%;
+    display: inline-block; */
+    
+}
+
+#qualiteServiceConainer{
+    /* outline: solid black; */
+    /* margin-top: 10px; */
+}
+
+.textQualite{
+    vertical-align: auto;
+    text-align: center;
+    color: aliceblue;
+    visibility: visible;
+    padding-bottom: 2%;
+}
+
+.textQualite p{
+    z-index: 1;
+}
+
+.icone{
+    /* position: relative; */
+    /* display: inline-block; */
+    z-index: 0;
+    position: relative;
+    /* top: 50%; */
+    /* top : 50px */
+    /* margin-top: 10%; */
+    /* margin: 50% 0; */
+
+    /* margin-top: 50%; */
+}
+
+.slideTop{
+    animation: slideFromBottom 1s ease-in-out;
+}
+
+
+
+.cube{
+    /* transform: rotate(50deg); */
+    z-index: 3;
+    /* width: var(--width-screen); */
+    height: 50px;
+    background-color: rebeccapurple;
+    position: relative;
+    animation: rightToLeft 2s ease-in-out;
+}
+
+[invisible]{
+    background-color: red;
+    visibility: hidden !important;
+    position: absolute;
+}
+
+.filter-orange{
+    /* ça fait du orange ne me demandez pas pourquoi */
+    filter: invert(75%) sepia(22%) saturate(4607%) hue-rotate(343deg) brightness(95%) contrast(87%);
+}
+
+.bus{
+    /* transition: 2s, ease-in-out; */
+    visibility: hidden;
+    height: 3em;
+}
+
+.leftToRight{
+    /* transform: translateX(500px); */
+    /* transform: rotate(50deg); */
+    /* transition: 4s ease-in-out; */
+    animation: leftToRight 2s ease-in-out;
+}
+
+@keyframes leftToRight {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(var(--width-screen));
+    }
+}
+
+@keyframes rightToLeft {
+    0%{
+        transform: translateX(var(--width-screen));
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes leftToNormal {
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    20%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes normalToLeft {
+    0%{
+        transform: translateX(0%);
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+/* invisible, puis visible, puis invisible */
+@keyframes busAnimationVisibility {
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+@keyframes disapear {
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes apear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromBottom {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+}
+
+@keyframes slideFromTop {
+    0% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+}

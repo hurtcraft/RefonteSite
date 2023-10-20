@@ -1,5 +1,5 @@
 import {WEATHER_API_KEY} from "./config.js";
-import { actuDatas,mapDatas,chiffresEconomiques } from "./accueilData.js";
+import { actuDatas,mapDatas,chiffresEconomiques,agendaData } from "./accueilData.js";
 //const navBar=document.getElementById("NavBar");
 //const divMeteo=document.getElementById("meteo");
 const divTemperature=document.getElementById("temperature");
@@ -75,7 +75,7 @@ getMeteo();
 
 actus();
 const allActus=document.querySelectorAll(".actu");
-
+let titleActu;
 allActus.forEach(actu => {
     actu.addEventListener("click",()=>{
         allActus.forEach(elt=>{
@@ -96,6 +96,18 @@ allActus.forEach(actu => {
 
 
         })
+    })
+    actu.addEventListener("mouseover",()=>{
+        titleActu=actu.querySelector(".headerActu");
+        
+        titleActu.style.display="block";
+        titleActu.style.animation="apparition_anime 0.8s";
+        
+    })
+
+    actu.addEventListener("mouseleave",()=>{
+        titleActu.style.animation="";
+        titleActu.style.display="none";
     })
 });
 
@@ -129,6 +141,7 @@ regions.forEach(r=>{
         
         mapDataContainer.addEventListener("animationend",()=>{
             mapDataContainer.style.animation="";
+            mapDataContainer.scrollIntoView({ behavior: "smooth" });
         })
     })
 })
@@ -136,7 +149,6 @@ regions.forEach(r=>{
 
 const chiffreEcoContainer=document.getElementById("chiffreEco");
 const chiffreContainers=chiffreEcoContainer.querySelectorAll("[container]");
-console.log(chiffreContainers);
 const Observer=new IntersectionObserver((entries)=>{
     for(const entry of entries){
         let title;
@@ -178,11 +190,11 @@ function defilementChiffre(container,x,delay){
                 container.textContent=x;
 
             }
-
         }
     }
     defilement();
 }
+
 function randomInt(max){
     return Math.floor(Math.random()*max);
 }
@@ -191,3 +203,34 @@ function randomInt(max){
 
 const planning=document.getElementById("planning");
 const planningContent=document.getElementById("planningContent");
+const events=planning.querySelectorAll(".event");
+
+for(let i = 0;i<events.length;i++){
+    let e =events[i];
+    let rond=e.querySelector(".rond");
+    let span=e.querySelector("span");
+    span.textContent=agendaData[i].titre;
+    rond.addEventListener("click",()=>{
+        planningContent.style.animation="slide_left 0.2s";
+        planningContent.textContent=agendaData[i].desc;
+
+        planningContent.addEventListener("animationend",()=>{
+            planningContent.scrollIntoView({ behavior: "smooth" }); 
+            planningContent.style.animation="";
+        })
+    })
+
+}
+
+//section acces rapide + RS
+
+const accesRapide=document.getElementById("accesRapide");
+const RSContainer=document.getElementById("RS");
+
+function createAcces(){
+    
+}
+
+
+
+

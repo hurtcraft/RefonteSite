@@ -133,6 +133,7 @@ body{
     transition: 0.8s ;
     animation: apparition_anime 2.5s;
     display: none;
+    z-index: 100;
 }
 #escapeActuBtn:hover{
     transform: scale(1.3);
@@ -359,7 +360,9 @@ i{
 #accesRapide{
     width: 50%;
     height: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
     justify-content: center;
     justify-content: space-around;
     align-items: center;
@@ -367,10 +370,19 @@ i{
 }
 
 #accesRapide a{
-    width: 23%;
+    width: 65%;
     text-align: center;
     text-decoration: none;
     color: aliceblue;
+    transform: translate(20%,20%);
+}
+
+#accesRapide a h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
 }
 #accesRapide img{
     width: 100%;
@@ -378,10 +390,11 @@ i{
     transition: 0.5s;
 }
 #accesRapide img:hover{
-    transform: scale(1.2);
-    transition: 0.5s;
+    filter: blur(20px);
 }
-.RS a{
+
+
+.linkContact{
     text-decoration: none;
     width: 80%;
     transform: translateY(150%);
@@ -406,18 +419,87 @@ i{
     transform: scale(1.1);
     transition: 0.2s;
 }
-@media(max-width:1400px){
-    #currentDescContainer{
-        font-size: large;
-    }
+#contactRS{
+    width: 80%;
+    height: auto;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: space-around;
 }
+
+.linkRS img {
+    width: 80%;
+    border-radius: 100px;
+    filter: grayscale(100);
+    transition: 0.5s;
+}
+.linkRS img:hover{
+    filter: grayscale(0);
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+
+
+
 @media(max-width:800px){
     svg {
         transform: scale(0.9); 
         margin-top: 10vh;
     }
+    .headerActu{
+        font-size: small;
+    }
+    #currentImgContainer{
+        margin-left: 5vw;
+        height: 50%;
+        width: 30vw;
+        top: 25%;
+        
+    }
+    #map{
+        margin-top: 10vh;
+    }
+    #contactRS{
+
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        gap: 10px;
+    }
+    .linkRS img {
+        width: 60%;
+    }
+    #accesRapide{
+        display: flex;
+        flex-direction: column;
+    }
+    #accesRapide a {
+        width: 70%;
+        transform: translate(-5%,40%);
+    }
+
+
 }
+
 @media(max-width:1100px){
+
+
+    #RSTitle,#accesRapideTitle{
+        font-size: 1.5rem;
+        margin-top: 1vh;
+    }
+    .contactBtn{
+        margin-top: 5%;
+    }
+    #currentImgContainer{
+        margin-left: 5vw;
+        height: 70%;
+        width: 30vw;
+        top: 15%;
+        
+        background-color: white;
+    }
     #map{
         flex-direction: column;
         height: 180vh;
@@ -443,7 +525,9 @@ i{
 
     .actu{
         width: 50%;
-        transform: translateX(25%);
+        height: 80%;
+        transform: translateX(40%);
+    
     }
     .headerActu{
         width: 100%;

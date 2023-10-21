@@ -226,7 +226,19 @@ for(let i = 0;i<events.length;i++){
 
 const accesRapide=document.getElementById("accesRapide");
 const RSContainer=document.getElementById("RS");
+const allAcces=accesRapide.querySelectorAll("a");
 
+let titleAccesRapide;
+
+allAcces.forEach(acces=>{
+    acces.addEventListener("mouseover",()=>{
+        titleAccesRapide=acces.querySelector("h3");
+        titleAccesRapide.style.display="block";
+    })
+    acces.addEventListener("mouseleave",()=>{
+        titleAccesRapide.style.display="none";
+    })
+})
 function createAcces(){
     
 }

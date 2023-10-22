@@ -1,5 +1,5 @@
 import {WEATHER_API_KEY} from "./config.js";
-import { actuDatas,mapDatas,chiffresEconomiques,agendaData } from "./accueilData.js";
+import { actuDatas,mapDatas,chiffresEconomiques,agendaData,kiosqueData } from "./accueilData.js";
 //const navBar=document.getElementById("NavBar");
 //const divMeteo=document.getElementById("meteo");
 const divTemperature=document.getElementById("temperature");
@@ -141,7 +141,6 @@ regions.forEach(r=>{
         
         mapDataContainer.addEventListener("animationend",()=>{
             mapDataContainer.style.animation="";
-            mapDataContainer.scrollIntoView({ behavior: "smooth" });
         })
     })
 })
@@ -225,7 +224,6 @@ for(let i = 0;i<events.length;i++){
 //section acces rapide + RS
 
 const accesRapide=document.getElementById("accesRapide");
-const RSContainer=document.getElementById("RS");
 const allAcces=accesRapide.querySelectorAll("a");
 
 let titleAccesRapide;
@@ -239,10 +237,41 @@ allAcces.forEach(acces=>{
         titleAccesRapide.style.display="none";
     })
 })
-function createAcces(){
-    
+//section kiosque
+
+const magazineContainer=document.getElementById("magazineContainer");
+const allMagazines=[];
+
+function kiosqueInit(){
+    let magazine;
+    kiosqueData.forEach(kData=>{
+        magazine=createMagasine(kData);
+        magazineContainer.appendChild(magazine);
+        allMagazines.push(magazine);
+    })
+    console.log(allMagazines);
+}
+function createMagasine(data){
+    const img=new Image();
+    img.src=data.img;
+    img.classList.add("imgKiosque");
+    const link=document.createElement("a");
+    link.href=data.link;
+    link.target="_blank";
+    link.classList.add("kiosqueLink");
+    link.appendChild(img);
+    return link;
+}
+function swipe(allMagazines,dx){
+    let img;
+    allMagazines.forEach(magazine=>{
+        img=magazine.querySelector("img");
+        img.style.transform=`translateX(-20%)`;
+        
+        img.style.transition="0.5sec";
+        console.log("ici");
+    })
 }
 
 
-
-
+kiosqueInit();

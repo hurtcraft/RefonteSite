@@ -1,8 +1,12 @@
 import data from "../infos/qualitesServices.json" assert {type : "json"}
+import { jeuneTarif, retraiteTarif, emploiTarif, invalideTarif, publicTarif } from "../infos/tarifs.js";
+const tarifsText = [jeuneTarif, retraiteTarif, emploiTarif, invalideTarif, publicTarif]
 
 // var idInterva;
 const qualitesServiceContainer = document.getElementById("qualiteServiceConainer");
-const bus = document.querySelector(".bus");
+const tarifs = document.querySelectorAll(".tarif");
+const tarifContent = document.querySelector(".tarifContent")
+const busInTrafic = document.getElementById("busInTrafic")
 const windowWidth = document.documentElement.clientWidth;
 document.documentElement.style.setProperty('--width-screen', `${windowWidth-0.2*windowWidth}px`);0
 document.documentElement.style.setProperty('--negative-width-screen', `-${windowWidth-0.2*windowWidth}px`);0
@@ -60,19 +64,42 @@ function addQualitesServices() {
         qualitesServiceContainer.appendChild(qualiteDiv)
     })
 }
+/**
+ * @returns banniere content pour pouvoir directement append
+ */
+function createBanniere() {
+    let divBanniere = document.createElement("div");
+    divBanniere.classList.add("banniere");
+    let divArrow = document.createElement("div");
+    divArrow.classList.add("arrow");
+    let divSquare = document.createElement("div");
+    divSquare.classList.add("square");
+    let divTriangle = document.createElement("div");
+    divTriangle.classList.add("triangle");
+    let divContainer = document.createElement("div");
+    divContainer.classList.add("banniereContent");
+    divBanniere.appendChild(divArrow);
+    divArrow.appendChild(divSquare);
+    divArrow.appendChild(divTriangle);
+    divBanniere.appendChild(divContainer);
+    return divBanniere;
+}
 
 function createQualite(qualite) {
-    let div = document.createElement("div");
+    // let div = document.createElement("div");
+    let div = createBanniere();
+    let divContainer = div.querySelector(".banniereContent");
     let icone = document.createElement("img");
     let divText = document.createElement("div");
     let titre = document.createElement("h1");
     let desc = document.createElement("p");
     let bus = document.createElement("img");
-
-    div.classList.add("qualite")
+    // div.appendChild(createArrow());
+    // div.classList.add("qualite")
     bus.classList.add("filter-orange");
     bus.classList.add("bus");
-    bus.src = "../img/transports/bus.svg";
+    // ?? je suppose qu'on est dans le fichier Transport.html
+    bus.src = "./img/transports/bus.svg";
     bus.toggleAttribute("clicked")
 
     // bus.toggleAttribute("invisible");
@@ -89,23 +116,23 @@ function createQualite(qualite) {
 
     divText.appendChild(titre);
     divText.appendChild(desc);
-    div.appendChild(icone);
-    div.appendChild(bus)
-    div.appendChild(divText);
+    divContainer.appendChild(icone);
+    divContainer.appendChild(bus)
+    divContainer.appendChild(divText);
 
-    iconClickHandle(div);
+    iconClickHandle(divContainer);
 
     return div;
 }
 
 function createArrow() {
     let arrow = document.createElement("div");
-    arrow.classList.add("arrow");
+    arrow.classList.add("fleche");
     let square = document.createElement("div");
-    square.classList.add("square");
+    square.classList.add("carre");
     arrow.appendChild(square);
     let triangle = document.createElement("div");
-    triangle.classList.add("triangle");
+    triangle.classList.add("tri");
     arrow.appendChild(triangle);
     return arrow;
 }
@@ -206,4 +233,47 @@ function addHoverEffectQualite(icone) {
     // });
 }
 // addPaddingToStart()
-addQualitesServices()
+
+function tarifHandler() {
+    let barT = document.querySelector(".barT")
+    busInTrafic.addEventListener("animationend", ()=>{
+        busInTrafic.style.animation = "";
+    })
+    tarifs.forEach((element, index) =>{
+        
+        let animation = {transform : `translateX(${element.getBoundingClientRect().left}px)`}
+            
+        let disapearAnim = [{opacity : 0}, {opacity : 1, offset : 0.2}, {opacity : 1, offset : 0.8}, {opacity : 0, offset : 1}]
+        
+        element.addEventListener("mouseover", ()=>{
+            element.querySelector("p").style.display = "block"
+        })
+        element.addEventListener("mouseout", ()=>{
+            element.querySelector("p").style.display = "none"
+        })
+        element.addEventListener("click", (e)=>{
+            // ------------------------------------------Animation de 180deg ne fonctionne pas j'ai la flemme
+            let indexTarif = Array.prototype.indexOf.call(barT.children, element)
+            let busIndex = parseInt(busInTrafic.getAttribute("index"));
+            // if (busInTrafic.hasAttribute("right") && indexTarif < busIndex){
+            //     console.log("tourne");
+            //     busInTrafic.animate(flip, {duration : 0, fill : "forwards"})
+            // }
+            tarifContent.innerText = tarifsText[indexTarif-1]
+            busInTrafic.setAttribute("index", indexTarif)
+            let animationDuration = {duration : 1000*Math.abs(indexTarif-busIndex), fill : "forwards"}
+
+            busInTrafic.animate(animation, animationDuration);
+            busInTrafic.animate(disapearAnim, animationDuration)
+            // busInTrafic.style.left = element.getBoundingClientRect().left+"px"
+        })
+    })
+}
+
+function init() {
+    addQualitesServices();
+    tarifHandler();
+}
+
+
+init()

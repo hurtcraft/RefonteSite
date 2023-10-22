@@ -1,17 +1,12 @@
 import {WEATHER_API_KEY} from "./config.js";
 import { actuDatas,mapDatas,chiffresEconomiques,agendaData,kiosqueData } from "./accueilData.js";
-//const navBar=document.getElementById("NavBar");
-//const divMeteo=document.getElementById("meteo");
+
 const divTemperature=document.getElementById("temperature");
 const meteoIcon=document.getElementById("meteoIcon")
 const currentDescContainer=document.getElementById("currentDescContainer");
 const currentImgContainer=document.getElementById("currentImgContainer");
 const escapeActuBtn=document.getElementById("escapeActuBtn");
-//const baniereActus=document.getElementById("banniere");
 
-
-//const fluxRss="https://news.google.com/rss/search?q=Beauvais&hl=fr&gl=FR&ceid=FR:fr";
-//const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
 // const WEATHER_API_KEY="7d4fed23c3b77156f7cc9ac02a44fc32";
 const WEATHER_API_URL="https://api.openweathermap.org/data/2.5/weather?&units=metric&lang=french"
@@ -249,7 +244,6 @@ function kiosqueInit(){
         magazineContainer.appendChild(magazine);
         allMagazines.push(magazine);
     })
-    console.log(allMagazines);
 }
 function createMagasine(data){
     const img=new Image();
@@ -261,16 +255,6 @@ function createMagasine(data){
     link.classList.add("kiosqueLink");
     link.appendChild(img);
     return link;
-}
-function swipe(allMagazines,dx){
-    let img;
-    allMagazines.forEach(magazine=>{
-        img=magazine.querySelector("img");
-        img.style.transform=`translateX(-20%)`;
-        
-        img.style.transition="0.5sec";
-        console.log("ici");
-    })
 }
 
 

@@ -4,7 +4,11 @@
     font-family: "Arial","Calibri",sans-serif,'Roboto';
     font-size: large;
 }
-
+#msgPageConstruction{
+    font-size: 5rem;
+    text-align: center;
+    transform: translateY(10vh);
+}
 #NavBar{
     display: grid;
     width: 100%;

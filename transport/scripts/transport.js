@@ -98,7 +98,8 @@ function createQualite(qualite) {
     // div.classList.add("qualite")
     bus.classList.add("filter-orange");
     bus.classList.add("bus");
-    bus.src = "../img/transports/bus.svg";
+    // ?? je suppose qu'on est dans le fichier Transport.html
+    bus.src = "./img/transports/bus.svg";
     bus.toggleAttribute("clicked")
 
     // bus.toggleAttribute("invisible");

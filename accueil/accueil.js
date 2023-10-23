@@ -1,17 +1,12 @@
 import {WEATHER_API_KEY} from "./config.js";
-import { actuDatas,mapDatas,chiffresEconomiques,agendaData } from "./accueilData.js";
-//const navBar=document.getElementById("NavBar");
-//const divMeteo=document.getElementById("meteo");
+import { actuDatas,mapDatas,chiffresEconomiques,agendaData,kiosqueData } from "./accueilData.js";
+
 const divTemperature=document.getElementById("temperature");
 const meteoIcon=document.getElementById("meteoIcon")
 const currentDescContainer=document.getElementById("currentDescContainer");
 const currentImgContainer=document.getElementById("currentImgContainer");
 const escapeActuBtn=document.getElementById("escapeActuBtn");
-//const baniereActus=document.getElementById("banniere");
 
-
-//const fluxRss="https://news.google.com/rss/search?q=Beauvais&hl=fr&gl=FR&ceid=FR:fr";
-//const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
 // const WEATHER_API_KEY="7d4fed23c3b77156f7cc9ac02a44fc32";
 const WEATHER_API_URL="https://api.openweathermap.org/data/2.5/weather?&units=metric&lang=french"
@@ -141,7 +136,6 @@ regions.forEach(r=>{
         
         mapDataContainer.addEventListener("animationend",()=>{
             mapDataContainer.style.animation="";
-            mapDataContainer.scrollIntoView({ behavior: "smooth" });
         })
     })
 })
@@ -225,7 +219,6 @@ for(let i = 0;i<events.length;i++){
 //section acces rapide + RS
 
 const accesRapide=document.getElementById("accesRapide");
-const RSContainer=document.getElementById("RS");
 const allAcces=accesRapide.querySelectorAll("a");
 
 let titleAccesRapide;
@@ -239,10 +232,30 @@ allAcces.forEach(acces=>{
         titleAccesRapide.style.display="none";
     })
 })
-function createAcces(){
-    
+//section kiosque
+
+const magazineContainer=document.getElementById("magazineContainer");
+const allMagazines=[];
+
+function kiosqueInit(){
+    let magazine;
+    kiosqueData.forEach(kData=>{
+        magazine=createMagasine(kData);
+        magazineContainer.appendChild(magazine);
+        allMagazines.push(magazine);
+    })
+}
+function createMagasine(data){
+    const img=new Image();
+    img.src=data.img;
+    img.classList.add("imgKiosque");
+    const link=document.createElement("a");
+    link.href=data.link;
+    link.target="_blank";
+    link.classList.add("kiosqueLink");
+    link.appendChild(img);
+    return link;
 }
 
 
-
-
+kiosqueInit();

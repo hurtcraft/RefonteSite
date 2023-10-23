@@ -28,5 +28,15 @@ const agendaData=[
     {titre:"prévention des déchets ménagers",date:"27/09/2023",desc:"La Communauté d’Agglomération du Beauvaisis prépare son Programme Local de Prévention des Déchets Ménagers et Assimilés (PLPDMA), 2024-2029.La prévention des déchets vise à réduire à la source la quantité de déchets produits. Le plan d’action autour de ce programme s’articule autour de 8 axes thématiques : l’éo-exemplarité, la sensibilisation du public, les instruments économiques, la lutte contre le gaspillage alimentaire, la sensibilisation à une consommation responsable, les biodéchets, l’augmentation de la durée de vie des produits et les déchets des entreprises.Avant son adoption par le Conseil communautaire de la CAB, le projet de PLPDMA doit être soumis à la consultation du public (Article R 541-41-24 du décret du 10 juin 2015 relatif aux PLPDMA)Dans le cadre de cette consultation, une réunion est organisée afin d’échanger avec les habitants de la CAB autour du projet :>>> Mercredi 27 septembre, 18h-19h30, au Cinéma CGR, salle 6 à Beauvais.À la suite de la réunion, de 19h30 à 20h, partageons ensemble un moment convivial autour d’un buffet dînatoire. Puis, regardons ensemble la projection du film TRASHED, réalisé par Candida Brady (OFFERT).Dès la fin de la consultation publique, la CAB rédigera une synthèse des observations du public et des modifications pourront être apportées au document."}
 ]  
 
+const kiosqueData=[
+    {img:"./img/kiosque/kiosque1.jpeg",link:"https://www.beauvaisisnotreterritoire.fr/docs/2310-mag-beauvaisis.pdf"},
+    {img:"./img/kiosque/kiosque2.jpeg",link:"https://www.beauvaisisnotreterritoire.fr/docs/2309-mag-beauvaisis.pdf"},
+    {img:"./img/kiosque/kiosque3.jpeg",link:"https://www.beauvaisisnotreterritoire.fr/docs/2307-bnt.pdf"},
+    {img:"./img/kiosque/kiosque4.jpeg",link:"https://www.beauvaisisnotreterritoire.fr/docs/2306-bnt.pdf"},
+    {img:"./img/kiosque/kiosque5.jpeg",link:"https://www.beauvaisisnotreterritoire.fr/docs/2305-bnt.pdf"},
+    {img:"./img/kiosque/kiosque6.jpeg",link:"https://www.beauvaisisnotreterritoire.fr/docs/2304-bnt.pdf"},
+    {img:"./img/kiosque/kiosque7.jpeg",link:"https://www.beauvaisisnotreterritoire.fr/docs/2303-bnt.pdf"},
+    {img:"./img/kiosque/kiosque8.jpeg",link:"https://www.beauvaisisnotreterritoire.fr/docs/2302-bnt.pdf"},
 
-export{actuDatas,mapDatas,chiffresEconomiques,agendaData};
+]
+export{actuDatas,mapDatas,chiffresEconomiques,agendaData,kiosqueData};

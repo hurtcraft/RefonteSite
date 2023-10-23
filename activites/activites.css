@@ -1,0 +1,310 @@
+@import url(commun/commun.css);
+#meteo{
+    margin-top: -2vw;
+    padding: 10%;
+    display: flex;
+    width: 30%;
+    grid-column: 9;
+    grid-row: 3;
+    opacity: 0;
+    animation: apparition_anime 3s 1.3s ease-out forwards;
+    filter:invert(100%);
+}
+#meteoIcon{
+    width: 100%;
+    padding: 10%;
+}
+#temperature{
+    font-size: larger;
+
+}
+
+
+#imgTampon{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.c-item{
+    height: 700px;
+}
+.c-img{
+    height: 100%;
+    object-fit:cover;
+    filter: brightness(0.6);
+}
+
+#presentation{
+    flex-direction: row;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+    gap:50px;
+}
+.button{
+    display: block;
+}
+
+.logo .logoVisit{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.logoVisit{
+    width: 600px;
+    height:auto;  
+    object-fit: cover;
+}
+
+.para{
+    display: block;
+    flex-direction: column;
+    width:40% ;
+    height: 40%;
+}
+.button{
+    border: none;
+    padding: 10px;
+    background-color: #CF1414 ;
+    color: white;
+    border-radius:20px;
+    margin-left: 40%;
+}
+.button:hover{
+    background-color: #b41111;
+}
+
+
+
+
+
+
+.LoisirContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    gap:10px;
+    margin-bottom: 10%;
+
+}
+.Loisir{
+    width: 20vw;
+    height: 60vh;
+    transition: 0.5s;
+    position: relative;
+    
+}
+.Loisir:hover{
+    width: 30vw;
+    
+}
+.imgLoisir:hover{
+    object-fit:cover;
+    filter: brightness(0.6);
+}
+
+.Loisir .imgLoisir{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+.imgLoisir{
+    object-fit: cover;
+}
+.headerLoisir{
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    font-weight: bold;
+    visibility: hidden;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+
+
+
+
+
+
+
+.headerSite{
+    color:white;
+}
+
+.SiteTouristiqueContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2%;
+}
+.SiteTouristique{
+    width: 90%;
+    height: 90%;
+    transition: 0.5s;
+    position: relative;
+}
+
+.banniereContent .SiteTouristiqueContainer{
+    width: 80%;
+    height: 100%;
+}
+.banniereContent{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.imgSite{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: flex;
+    object-fit:cover;
+    flex-direction: column;
+
+}
+.headerSite{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    visibility: hidden;
+    text-align: center;
+    text-decoration : underline;
+}
+
+.SiteTouristique .imgSite{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.SiteTouristique:hover>img{
+    object-fit:cover;
+    filter: brightness(0.6);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cultureimg .img{
+    width: 40vw;
+    height: 50vh;
+}
+.cultureimg{
+
+}
+.img{
+    width: 100%;
+    height: 100%;
+}
+#Espaceculture{
+
+}
+.culture{
+    width: 40%;
+    height: 40%;
+}
+
+.culture1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+    
+h1{
+    margin-top: 10%;
+    color: #CF1414;
+    text-align: center;
+    font-weight: bold;
+}
+.titleCulture{
+    margin-left: 8%;
+    margin-top: 10%;
+    margin-bottom: 2%;
+    font-weight: bold;
+}
+@media all and (max-width:1100px) {
+    .cultureimg .img{
+        height: 40vh;
+        width: 50vw;
+    }
+    #Espaceculture{
+        display: block;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .titleCulture{
+        margin-left: 0%;
+        text-align: center;
+        margin-top: 10%;
+        margin-bottom: 2%;
+        font-weight: bold;
+    }
+    .para{
+        width: 100%;
+        height: 100%;
+        text-align: center; 
+    }
+    .culture{
+        display: block;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    #presentation{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    }
+    #logoVisit{
+        width: 500px;
+        height: auto;
+    }
+    .culture1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 5%;
+    }
+}
+@media all and (max-width:600px){
+    .logoVisit{
+        
+        width: 300px;
+        height: auto;
+    }
+    .cultureimg .img{
+        height: 30vh;
+        width: 60vw;
+    }
+}

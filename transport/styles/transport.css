@@ -109,7 +109,7 @@
     height: 50vh;
 }
 
-.banniereContent{
+#qualiteServiceConainer .banniereContent{
     width: auto;
     height: auto;
     align-items: center;
@@ -119,17 +119,6 @@
     animation: slideFromBottom 1s ease-in-out;
 }
 
-
-
-.cube{
-    /* transform: rotate(50deg); */
-    z-index: 3;
-    /* width: var(--width-screen); */
-    height: 50px;
-    background-color: rebeccapurple;
-    position: relative;
-    animation: rightToLeft 2s ease-in-out;
-}
 
 [invisible]{
     background-color: red;
@@ -155,35 +144,6 @@
     animation: leftToRight 2s ease-in-out;
 }
 
-.flecheContainer{
-
-}
-
-.fleche{
-    z-index: 3;
-    display: flex;
-    /* position: relative; */
-    background-color: orange;
-    /* position: absolute; */
-    z-index: 0;
-    flex-direction:row;
-    width: 45%;
-    height: 100%;
-    /* background-color: rebeccapurple; */
-}
-
-.carre{
-    height: 100%;
-    width: 75%;
-    background-color: var(--bg-color-red);
-}
-
-.tri{
-    /* height: 100%; */
-    width: 5%;
-    clip-path: polygon(0 0, 100% 50%, 0% 100%);
-    background-color: blue;
-}
 
 .carteCoralisContainer{
     overflow: hidden;
@@ -241,7 +201,11 @@
     position: relative;
     display: none;
     margin: 5em 0;
-    
+    font-size: 1.2em;
+}
+
+.tarifContent a{
+    font-size: 1.2em;
 }
 
 .jeune{
@@ -285,6 +249,36 @@
     visibility: visible;
     position: absolute;
     left: 0%;
+}
+
+.keyNumbers .banniereContent{
+    justify-content: space-evenly;
+}
+
+.card{
+    align-items: center;
+    justify-content: center;
+    outline: aliceblue solid 1px;
+    border-radius: 5%;
+    width: min(33%, 300px);
+}
+
+.card img{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.card p{
+    color: aliceblue;
+    transform: rotateY(180deg);
+    display: none;
+    opacity: 0;
+    text-align: center;
+}
+
+a#charte{
+    text-decoration: underline;
 }
 
 @keyframes leftToRight {
@@ -393,3 +387,45 @@
         transform: translateX(-25%);
     }
 }
+
+@keyframes turn0To180{
+    0%{
+      transform: rotatey(0deg);
+    }
+    100%{
+      transform: rotatey(180deg);
+    }
+  }
+  
+  @keyframes turn180To360{
+    0%{
+      transform: rotatey(180deg);
+    }
+    100%{
+      transform: rotatey(360deg);
+    }
+  }
+  
+  @keyframes appearAt50{
+    50%{
+      opacity: 0;
+    }
+    75%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  
+  @keyframes disappearAt50{
+    0%{
+      opacity: 1;
+    }
+    50%{
+      opacity: 1;
+    }
+    75%{
+      opacity: 0;
+    }
+  }

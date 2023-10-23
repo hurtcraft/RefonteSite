@@ -1,4 +1,4 @@
-import data from "../infos/qualitesServices.json" assert {type : "json"}
+import data from "../infos/qualitesServices.json" assert {type: "json"}
 import { jeuneTarif, retraiteTarif, emploiTarif, invalideTarif, publicTarif } from "../infos/tarifs.js";
 const tarifsText = [jeuneTarif, retraiteTarif, emploiTarif, invalideTarif, publicTarif]
 
@@ -8,8 +8,10 @@ const tarifs = document.querySelectorAll(".tarif");
 const tarifContent = document.querySelector(".tarifContent")
 const busInTrafic = document.getElementById("busInTrafic")
 const windowWidth = document.documentElement.clientWidth;
-document.documentElement.style.setProperty('--width-screen', `${windowWidth-0.4*windowWidth}px`);
-document.documentElement.style.setProperty('--negative-width-screen', `-${windowWidth-0.4*windowWidth}px`);
+const linkChart = document.getElementById("charte")
+document.documentElement.style.setProperty('--width-screen', `${windowWidth - 0.4 * windowWidth}px`);
+document.documentElement.style.setProperty('--negative-width-screen', `-${windowWidth - 0.4 * windowWidth}px`);
+const cards = document.querySelectorAll(".card");
 
 addBusAnimation();
 
@@ -24,7 +26,7 @@ function addPaddingToStart() {
     qualitesServiceContainer.style.paddingTop = `${document.getElementById("NavBar").clientHeight}px`;
 }
 
-function addQualitesServicesOld(){
+function addQualitesServicesOld() {
     data.qualites.forEach((element) => {
         let qualite = document.createElement("div");
         let iconeQualite = document.createElement("img");
@@ -33,7 +35,7 @@ function addQualitesServicesOld(){
         let desc = document.createElement("p");
 
         iconeQualite.src = element.image;
-        
+
         addHoverEffectQualite(iconeQualite)
 
         textQualite.classList.add("textQualite");
@@ -51,15 +53,15 @@ function addQualitesServicesOld(){
 
         // console.log(qualite.childNodes());
 
-        
+
 
         titre.innerText = element.titre;
         desc.innerText = element.description;
-    }) 
+    })
 }
 
 function addQualitesServices() {
-    data.qualites.forEach((qualite)=>{
+    data.qualites.forEach((qualite) => {
         let qualiteDiv = createQualite(qualite);
         qualitesServiceContainer.appendChild(qualiteDiv)
     })
@@ -127,16 +129,16 @@ function createQualite(qualite) {
 
 
 const arrowAnimation = [
-    {transform : "translateX(-50%)"},
-    {transform : "translateX(-25%)"}
+    { transform: "translateX(-50%)" },
+    { transform: "translateX(-25%)" }
 ]
 
 const arrowAnimationBack = [
-    {transform : "translateX(-25%)"},
-    {transform : "translateX(-50%)"}
+    { transform: "translateX(-25%)" },
+    { transform: "translateX(-50%)" }
 ]
 
-const arrowAnimationDuration = {duration : 2000, fill : "forwards"}
+const arrowAnimationDuration = { duration: 2000, fill: "forwards" }
 function iconClickHandle(divQaulite) {
     let icone = divQaulite.querySelector(".icone");
     let bus = divQaulite.querySelector(".bus");
@@ -153,33 +155,33 @@ function iconClickHandle(divQaulite) {
     //     }
     // })
 
-    divText.addEventListener("animationend", ()=>{
+    divText.addEventListener("animationend", () => {
         divText.style.animation = "";
-        if (bus.hasAttribute("clicked")){
+        if (bus.hasAttribute("clicked")) {
             divText.style.visibility = "hidden"
         }
     })
 
-    icone.addEventListener("animationend", ()=>{
+    icone.addEventListener("animationend", () => {
         icone.style.animation = "";
-        if (bus.hasAttribute("clicked")){
+        if (bus.hasAttribute("clicked")) {
             icone.style.transform = `translateX(0px)`;
         }
-        else{
-            icone.style.transform = `translateX(${windowWidth-0.4*windowWidth}px)`;
+        else {
+            icone.style.transform = `translateX(${windowWidth - 0.4 * windowWidth}px)`;
         }
     })
 
-    bus.addEventListener("animationend", ()=>{
+    bus.addEventListener("animationend", () => {
         bus.style.animation = "";
         bus.style.opacity = "0";
         divText.style.animation = "";
         // icone.style.animation = "";
         // divText.style.visibility = "hidden"
     })
-    icone.addEventListener("click", ()=>{
+    icone.addEventListener("click", () => {
         bus.toggleAttribute("clicked")
-        if (bus.hasAttribute("clicked")){
+        if (bus.hasAttribute("clicked")) {
             // bus.style.visibility = "hidden"
             bus.style.animation = "rightToLeft 2s ease-in-out, busAnimationVisibility 2s ease-in-out";
             divText.style.animation = "normalToLeft 2s ease-in-out";
@@ -190,14 +192,14 @@ function iconClickHandle(divQaulite) {
             // }, 1990)
             // icone.style.animation = 
         }
-        else{
+        else {
             bus.style.visibility = "visible";
             // divText.style.visibility = "visible"
             bus.style.animation = "leftToRight 2s ease-in-out, busAnimationVisibility 2s ease-in-out"
             icone.style.animation = "leftToRight 2s ease-in-out";
             divArrow.animate(arrowAnimation, arrowAnimationDuration)
             // divArrow.style.animation = "slideLeftToRightArrow 2s ease-in-out"
-            
+
             divText.style.visibility = "visible"
             divText.style.animation = "leftToNormal 2s ease-in-out";
         }
@@ -210,18 +212,18 @@ function iconClickHandle(divQaulite) {
  * @param {HTMLImageElement} icone 
  */
 function addHoverEffectQualite(icone) {
-    icone.addEventListener("click", () =>{
+    icone.addEventListener("click", () => {
         // this.style.animation = "slideFromBottom 1s ease-in-out"
         // console.log(document.getElementById(`${icone.id}Text`));
         const textAnimated = document.getElementById(`${icone.id}Text`);
         // textAnimated.style.display = "block";
-        
+
         if (textAnimated.hasAttribute("invisible")) {
             icone.style.paddingTop = "0px";
             textAnimated.style.animation = "slideFromBottom 1s ease-in-out, apear 1s ease-in-out";
             textAnimated.toggleAttribute("invisible")
         }
-        else{
+        else {
             icone.style.paddingTop = "100%";
             textAnimated.style.animation = "slideFromTop 1s ease-in-out, disapear 1s ease-in-out";
             setTimeout(() => {
@@ -239,24 +241,25 @@ function addHoverEffectQualite(icone) {
 // addPaddingToStart()
 
 function tarifHandler() {
+    const nav = document.getElementById("NavBar")
     let barT = document.querySelector(".barT")
-    busInTrafic.addEventListener("animationend", ()=>{
+    busInTrafic.addEventListener("animationend", () => {
         busInTrafic.style.display = "none"
         busInTrafic.style.animation = "";
     })
-    tarifs.forEach((element, index) =>{
-        
-        let animation = {transform : `translateX(${element.getBoundingClientRect().left}px)`}
-            
-        let disapearAnim = [{opacity : 0}, {opacity : 1, offset : 0.2}, {opacity : 1, offset : 0.8}, {opacity : 0, offset : 1}]
-        
-        element.addEventListener("mouseover", ()=>{
+    tarifs.forEach((element, index) => {
+        let animation = { transform: `translateX(${element.getBoundingClientRect().left}px)` }
+
+        let disapearAnim = [{ opacity: 0 }, { opacity: 1, offset: 0.2 }, { opacity: 1, offset: 0.8 }, { opacity: 0, offset: 1 }]
+
+        element.addEventListener("mouseover", () => {
             element.querySelector("p").style.display = "block"
         })
-        element.addEventListener("mouseout", ()=>{
+        element.addEventListener("mouseout", () => {
             element.querySelector("p").style.display = "none"
         })
-        element.addEventListener("click", (e)=>{
+        element.addEventListener("click", (e) => {
+            window.scrollTo(0, element.offsetTop - nav.getBoundingClientRect().height + 1 - 50)
             busInTrafic.style.display = "block"
             // ------------------------------------------Animation de 180deg ne fonctionne pas j'ai la flemme
             let indexTarif = Array.prototype.indexOf.call(barT.children, element)
@@ -268,10 +271,10 @@ function tarifHandler() {
             //     busInTrafic.animate(flip, {duration : 0, fill : "forwards"})
             // }
             // tarifContent.innerText = tarifsText[indexTarif-1]
-            let tarifAfficher = tarifContent.querySelectorAll("div")[indexTarif-1]
+            let tarifAfficher = tarifContent.querySelectorAll("div")[indexTarif - 1]
             tarifAfficher.style.display = "block"
-            busInTrafic.setAttribute("index", indexTarif-1)
-            let animationDuration = {duration : 1000*Math.abs(indexTarif-busIndex), fill : "forwards"}
+            busInTrafic.setAttribute("index", indexTarif - 1)
+            let animationDuration = { duration: 1000 * Math.abs(indexTarif - busIndex), fill: "forwards" }
 
             busInTrafic.animate(animation, animationDuration);
             busInTrafic.animate(disapearAnim, animationDuration)
@@ -281,9 +284,47 @@ function tarifHandler() {
     tarifs[0].click()
 }
 
+function addCardsAnimation() {
+    cards.forEach((element) => {
+        let text = element.querySelector("p");
+        text.addEventListener("animationend", () => {
+            if (!element.hasAttribute("turn")) {
+                text.style.display = "none"
+            }
+        })
+        element.addEventListener("click", () => {
+            if (element.hasAttribute("turn")) {
+                element.style.animation = "turn180To360 1s forwards";
+                text.style.animation = "disappearAt50 0.5s forwards"
+            }
+            else {
+                element.style.animation = "turn0To180 1s forwards"
+                text.style.animation = "appearAt50 0.5s forwards"
+                text.style.display = "block"
+            }
+            element.toggleAttribute("turn");
+        })
+        element.addEventListener("animationend", () => {
+            //element.style.animation = ""
+        })
+    })
+}
+
+function charteClickHandler() {
+    const nav = document.getElementById("NavBar")
+    linkChart.addEventListener("click", (e) => {
+        window.scrollTo(0, qualitesServiceContainer.offsetTop - nav.getBoundingClientRect().height + 1);
+        e.preventDefault();
+        e.stopPropagation()
+    })
+}
+
 function init() {
     addQualitesServices();
     tarifHandler();
+    addCardsAnimation();
+    charteClickHandler();
+    window.scrollTo(0, 0);
 }
 
 

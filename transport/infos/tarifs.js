@@ -81,7 +81,7 @@ export const publicTarif = `À partir du 1er septembre 2023, la réduction est o
 
 Le quotient familial est un indicateur du niveau de vie de votre foyer fiscal.
 
-Il est calculé par les services de la CAF ou MSA si vous êtes allocataire ou à partir de votre dernier avis d’imposition, si vous n’êtes pas allocataire.
+Il est calculé par les services de la CAF ou MSA si vous êtes allocataire ou à partir de votre dernier avis d'imposition, si vous n'êtes pas allocataire.
 
  
 

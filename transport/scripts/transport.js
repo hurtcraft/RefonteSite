@@ -8,8 +8,8 @@ const tarifs = document.querySelectorAll(".tarif");
 const tarifContent = document.querySelector(".tarifContent")
 const busInTrafic = document.getElementById("busInTrafic")
 const windowWidth = document.documentElement.clientWidth;
-document.documentElement.style.setProperty('--width-screen', `${windowWidth-0.2*windowWidth}px`);0
-document.documentElement.style.setProperty('--negative-width-screen', `-${windowWidth-0.2*windowWidth}px`);0
+document.documentElement.style.setProperty('--width-screen', `${windowWidth-0.4*windowWidth}px`);
+document.documentElement.style.setProperty('--negative-width-screen', `-${windowWidth-0.4*windowWidth}px`);
 
 addBusAnimation();
 
@@ -125,22 +125,23 @@ function createQualite(qualite) {
     return div;
 }
 
-function createArrow() {
-    let arrow = document.createElement("div");
-    arrow.classList.add("fleche");
-    let square = document.createElement("div");
-    square.classList.add("carre");
-    arrow.appendChild(square);
-    let triangle = document.createElement("div");
-    triangle.classList.add("tri");
-    arrow.appendChild(triangle);
-    return arrow;
-}
 
+const arrowAnimation = [
+    {transform : "translateX(-50%)"},
+    {transform : "translateX(-25%)"}
+]
+
+const arrowAnimationBack = [
+    {transform : "translateX(-25%)"},
+    {transform : "translateX(-50%)"}
+]
+
+const arrowAnimationDuration = {duration : 2000, fill : "forwards"}
 function iconClickHandle(divQaulite) {
     let icone = divQaulite.querySelector(".icone");
     let bus = divQaulite.querySelector(".bus");
     let divText = divQaulite.querySelector(".divText");
+    let divArrow = divQaulite.parentNode.querySelector(".arrow")
 
     // divText.addEventListener("animationend", ()=>{
     //     if (!isVisible(divText)){
@@ -162,10 +163,10 @@ function iconClickHandle(divQaulite) {
     icone.addEventListener("animationend", ()=>{
         icone.style.animation = "";
         if (bus.hasAttribute("clicked")){
-            icone.style.transform = `translateX(0px)`;    
+            icone.style.transform = `translateX(0px)`;
         }
         else{
-            icone.style.transform = `translateX(${windowWidth-0.2*windowWidth}px)`;
+            icone.style.transform = `translateX(${windowWidth-0.4*windowWidth}px)`;
         }
     })
 
@@ -183,6 +184,7 @@ function iconClickHandle(divQaulite) {
             bus.style.animation = "rightToLeft 2s ease-in-out, busAnimationVisibility 2s ease-in-out";
             divText.style.animation = "normalToLeft 2s ease-in-out";
             icone.style.animation = "rightToLeft 2s ease-in-out";
+            divArrow.animate(arrowAnimationBack, arrowAnimationDuration)
             // setTimeout(()=>{
             //     divText.style.visibility = "hidden"
             // }, 1990)
@@ -193,6 +195,8 @@ function iconClickHandle(divQaulite) {
             // divText.style.visibility = "visible"
             bus.style.animation = "leftToRight 2s ease-in-out, busAnimationVisibility 2s ease-in-out"
             icone.style.animation = "leftToRight 2s ease-in-out";
+            divArrow.animate(arrowAnimation, arrowAnimationDuration)
+            // divArrow.style.animation = "slideLeftToRightArrow 2s ease-in-out"
             
             divText.style.visibility = "visible"
             divText.style.animation = "leftToNormal 2s ease-in-out";
@@ -237,6 +241,7 @@ function addHoverEffectQualite(icone) {
 function tarifHandler() {
     let barT = document.querySelector(".barT")
     busInTrafic.addEventListener("animationend", ()=>{
+        busInTrafic.style.display = "none"
         busInTrafic.style.animation = "";
     })
     tarifs.forEach((element, index) =>{
@@ -252,15 +257,20 @@ function tarifHandler() {
             element.querySelector("p").style.display = "none"
         })
         element.addEventListener("click", (e)=>{
+            busInTrafic.style.display = "block"
             // ------------------------------------------Animation de 180deg ne fonctionne pas j'ai la flemme
             let indexTarif = Array.prototype.indexOf.call(barT.children, element)
             let busIndex = parseInt(busInTrafic.getAttribute("index"));
+            tarifContent.querySelectorAll("div")[busIndex].style.display = "none"
+
             // if (busInTrafic.hasAttribute("right") && indexTarif < busIndex){
             //     console.log("tourne");
             //     busInTrafic.animate(flip, {duration : 0, fill : "forwards"})
             // }
-            tarifContent.innerText = tarifsText[indexTarif-1]
-            busInTrafic.setAttribute("index", indexTarif)
+            // tarifContent.innerText = tarifsText[indexTarif-1]
+            let tarifAfficher = tarifContent.querySelectorAll("div")[indexTarif-1]
+            tarifAfficher.style.display = "block"
+            busInTrafic.setAttribute("index", indexTarif-1)
             let animationDuration = {duration : 1000*Math.abs(indexTarif-busIndex), fill : "forwards"}
 
             busInTrafic.animate(animation, animationDuration);
@@ -268,6 +278,7 @@ function tarifHandler() {
             // busInTrafic.style.left = element.getBoundingClientRect().left+"px"
         })
     })
+    tarifs[0].click()
 }
 
 function init() {

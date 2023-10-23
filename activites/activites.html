@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/commun/commun.css">
+    <link rel="stylesheet" href="activites.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    
+</head>
+
+
+<body>
+    <!-----------------------------------------création de la bannière en carroussel avex Bootstrap-------------------------------------------------->
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
+        <div class="carousel-inner" >
+          <div class="carousel-item active c-item" data-bs-interval="6000" data-bs-pause="false">
+            <img src="img/activites/beauvais_amr.jpg" class="d-block w-100 c-img" alt="...">
+          </div>
+          <div class="carousel-item c-item" data-bs-interval="6000" data-bs-pause="false" >
+            <img src="img/activites/beauvais_activite.jpg" class="d-block w-100 c-img " alt="...">
+          </div>
+          <div class="carousel-item c-item" data-bs-interval="6000" data-bs-pause="false">
+            <img src="img/activites/amor.jpg" class="d-block w-100 c-img " alt="...">
+          </div>
+        </div>
+      </div>
+      
+<!-----------------------------------------création de la navBar-------------------------------------------------->
+    <div id="NavBarContainer">
+        <img src="/commun/img/banniereBeauvais.png" alt="" id = "logo">
+        <nav id = NavBar>
+          <div id="meteo">
+            <img id="meteoIcon" src="" alt="">
+            <h3 id ="temperature"></h3>
+        </div>
+        </nav>
+
+        <div id = "hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <!-----------------------------------------création de la div SiteTouristiques--------------------------------------->
+    <div id="presentation">
+      <div classe="logo">
+        <img class="logoVisit" src="img/activites/visitbeauvaislogo.png" alt="">
+      </div>
+        <div class="para" style="text-align:start">
+          <p>Afin de rendre l’information touristique accessible aux différentes portes d’entrée du territoire, l’office de tourisme de Beauvais & Beauvaisis a mis en place un schéma d’accueil et de diffusion de l’information touristique.
+            Notre engagement au quotidien est de satisfaire nos clients et d’avoir une relation partenariale épanouissante avec les acteurs locaux. L’accueil est un terme générique qui recouvre des réalités bien différentes ; accueil physique, numérique, mobile, interprète et ambassadeur.
+            Les commerçants tout comme les professionnels du tourisme (hébergeurs, restaurateurs, propriétaires de sites…) apportent une connaissance personnelle du territoire et sont dans ce cadre les interprètes des offres disponibles pour les clients.
+            Ainsi, l’objectif poursuivi par l’office de tourisme est de constituer, sur des axes de circulation, un réseau de commerçants partenaires qui puissent, à l’appui de notre documentation, apporter une information qualifiée aux visiteurs.</p>
+            <button class="button" onclick= "window.location.href = 'https://www.visitbeauvais.fr/;'">Lien office tourisme </button>
+        </div>
+    </div>
+    
+    <!-----------------------------------------création de la div SiteTouristiques-------------------------------------------------->
+    <div class="banniere">
+        
+      <div class="arrow">
+          <div class="square"></div>
+          <div class="triangle"></div>
+      </div>
+      <div class="banniereContent">
+        <div class ="SiteTouristiqueContainer"></div>
+      </div>
+    </div> 
+<!---------------------------------------------Espace culture----------------------------------------------------------------------->
+<h1>Espace Culture</h1>
+<div id = "Espaceculture">
+  <div><h2 class="titleCulture">La Maladrerie Saint Lazare</h2></div>
+  <div class="culture1">
+    
+      <div class="cultureimg">
+        <img class="img" src="img/activites/culture1.jpg" alt="">
+      </div>
+      <div class="culture">
+        <p>La maladrerie Saint-Lazare est un site remarquable des 12è et 13è siècles, typique de l’architecture hospitalière du Moyen-Age. Le logis des religieux, la chapelle romane, la grange et sa charpente en chêne d’origine, forment l’ensemble unique de ce qui constitue l’une des anciennes léproseries les mieux conservées en Europe.
+
+          Elle est protégée au titre des monuments historiques.
+          
+          Equipement culturel et touristique de la Communauté d’Agglomération du Beauvaisis, elle propose depuis 2009 une programmation artistique variée, des visites guidées et des ateliers de médiation autour du patrimoine et du jardin d’inspiration médiévale, des salons professionnels. Elle est également ouverte à la location pour les entreprises et les particuliers. </p>
+          <button class="button" onclick= "window.location.href ='https://maladrerie.fr/;'">J'y vais</button>
+          
+      </div>
+  </div>
+  <div><h2 class="titleCulture">Ecole d'art du Beauvaisis</h2></div>
+  <div class="culture1">
+    
+      <div class="culture" >
+        <p>L’École d’Art du Beauvaisis a 40 ans. École des Beaux-Arts communale devenue École
+          d’Art du Beauvaisis, cet établissement communautaire s’est hissé comme un lieu
+          incontournable de la culture en Beauvaisis.
+          
+          Chaque semaine, 800 usagers reçoivent, au travers d’ateliers de pratiques et de rencontres artistiques, une sensibilisation et un accès aux arts plastiques. Une classe préparatoire publique prolonge sa renommée bien au-delà de notre collectivité en accueillant et présentant, chaque année, quelque 30 candidats aux concours d’entrée d’écoles supérieures d’art partout en France.
+          
+          Grâce à son cycle de conférences thématiques, à ses workshops « fil/textile/matériaux souples » mais également à ses résidences et ses expositions autour de l’art contemporain et de la céramique, de nombreux acteurs culturels entretiennent avec nous un réseau dense et constructif.
+          
+          </p>
+        <button class="button" onclick= "window.location.href ='https://ecole-art-du-beauvaisis.com/;'">J'y vais </button>
+      </div>
+      <div class="cultureimg">
+        <img class="img" src="img/activites/culture2.jpg" alt="">
+      </div>
+  </div>
+  <div><h2 class="titleCulture">Conservatoire du Beauvaisis</h2></div>
+  <div class="culture1">
+
+    <div class="cultureimg">
+      <img class="img" src="img/activites/culture3.jpg" alt="">
+    </div>
+    <div class="culture">
+      <p>Equipement de la Communauté d’Agglomération du Beauvaisis, le Conservatoire Eustache-du-Caurroy est un établissement d’enseignement artistique classé « conservatoire à rayonnement départemental » par le Ministère de la Culture et de la Communication depuis 2008.
+
+        Il mène des missions d'initiation, de sensibilisation, de formation, de diffusion et de création à la musique et à la danse. Dès leur plus âge, les enfants peuvent s’initier à la musique, à l’expression corporelle et aux arts plastiques (dans le cadre d’un partenariat avec l’Ecole d’Art du Beauvaisis) grâce aux ateliers « découvertes ». Les professeurs abordent avec les enfants des jeux de sons, de couleurs, de rythmes et de mouvements.</p>
+      <button class="button" onclick= "window.location.href = 'https://conservatoire.beauvaisis.fr/;'">J'y vais </button>
+    </div>
+  </div>
+</div>
+
+<!---------------------------------------------Espace loisir----------------------------------------------------------------------->
+<h1>Espace Loisir</h1>
+<div class="LoisirContainer">
+    </div>
+    <div class="banniere">
+        
+
+      <div class="banniereContent">
+          <div id="footer">
+              <div class="footerItem"><p>L'hébergement du site www.beauvaisis.fr est géré par la société :<br /><br />
+
+                  OVH<br />
+                  SAS au capital de 10 000 000 €<br />
+                  RCS Roubaix – Tourcoing 424 761 419 00045<br />
+                  Code APE 6202A<br />
+                  Siège social : 2 rue Kellermann - 59100 Roubaix - France.<br /> <br /></p>
+
+              </div>
+              <div class="footerItem">
+                  <p>
+                      Contact<br /><br />
+                      Mairie de Beauvais<br />
+                      1 rue Desgroux<br />
+                      60 000 Beauvais<br />
+                      Tél: 33 (0) 3 44 79 40 00<br />
+                      
+                      Directeur Publication : Sylvia Baris<br />
+                      Responsable Internet : Stéphane Claudon <br />
+                  </p>
+              </div>
+              <div class="footerItem"><p>
+                  Traîtement des données<br /><br />
+
+                  Aucune information personnelle n'est collectée à votre insu.<br />
+
+                  Aucune information personnelle n'est cédée à des tiers.<br />
+
+
+              </p></div>
+          </div>
+      </div>
+</div>
+    <script src="activites.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+<script src="/commun/commun.js"></script>
+
+</body>
+</html>

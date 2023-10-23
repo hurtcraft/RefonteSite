@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ecologie</title>
+        <link rel="stylesheet" href="../commun/commun.css">
+        <link rel="stylesheet" href="./css/ecologie.css">   
+        <link rel="stylesheet" href="./css/sousPageDechet.css">
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+    </head>
+
+    <body>
+        
+        <!---------------------------------------------Début navbar---------------------------------------->
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
+            <div class="carousel-inner" >
+              <div class="carousel-item active c-item" data-bs-interval="6000" data-bs-pause="false">
+                <img src="./img/banniere.jpg" class="d-block w-100 c-img" alt="...">
+              </div>
+              <div class="carousel-item c-item" data-bs-interval="6000" data-bs-pause="false" >
+                <img src="./img/banniere.jpg" class="d-block w-100 c-img " alt="...">
+              </div>
+              <div class="carousel-item c-item" data-bs-interval="6000" data-bs-pause="false">
+                <img src="./img/banniere.jpg" class="d-block w-100 c-img " alt="...">
+              </div>
+            </div>
+          </div>
+
+        <div id="NavBarContainer">
+            <img src="/commun/img/banniereBeauvais.png" alt="" id = "logo">
+            <nav id = NavBar>
+            </nav>
+    
+            <div id = "hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+
+        <!--------------------------------------------Fin navbar----------------------------------->
+        <!--------------------------------------------Début onglets déchets----------------------------------->
+        <div id="onglets">
+            <div id = "onglets_dechets">
+                <button class="boutonD" id="actu">
+                    <i class="fa-regular fa-newspaper fa-2xl"></i>
+                    <p>Actus & infos</p>
+                </button>
+                <button class="boutonD" id="menager">
+                    <i class="fa-solid fa-trash fa-2xl"></i>
+                    <p>Déchets ménagers</p>
+                </button>
+                <button class="boutonD" id="verre">
+                    <i class="fa-solid fa-bottle-droplet fa-2xl"></i>
+                    <p>Verre</p>
+                </button>
+                <button class="boutonD" id="vegeteaux">
+                    <i class="fa-solid fa-leaf fa-2xl"></i>
+                    <p>Végétaux</p></button>
+                <button class="boutonD" id="encombrants">
+                    <i class="fa-solid fa-bicycle fa-2xl"></i>
+                    <p>Encombrants</p>
+                </button>
+                <button class="boutonD" id="compostage">
+                    <i class="fa-solid fa-apple-whole fa-2xl"></i>
+                    <p>Compostage</p></button>
+                <button class="boutonD" id="dechetterie">
+                    <i class="fa-solid fa-recycle fa-2xl"></i>
+                    <p>Déchetteries</p>	
+                </button>
+                <button class="boutonD" id="guideDocs">
+                    <i class="fa-solid fa-paper-plane fa-2xl"></i>
+                    <p>Guide et documents</p></button>
+            </div>
+        </div>
+        <div id="rouge"></div>
+        <div class="vide"></div>
+
+        <!--------------------------------------------Fin onglets déchets----------------------------------->
+
+        <!--------------------------------------------Début page déchet----------------------------------->
+
+        <div id="Pages">
+            <div class="PageD" id = "D_Actus"> <!--A faire apparaître en cliquant un des onglets-->
+                <div class="maintenance">
+                    <div>
+                        <img src="./img/maintenance.png" alt="">
+                        <p>Page en cours de maintenance</p>
+                    </div>
+                </div>
+                
+                <div class="vide"></div>
+                <footer>
+                    <p id="renseignement">Pour tout renseignement sur la collecte, n'hésitez pas à nous contacter :</p>
+                    <div id = "infoFooter">
+                        <img id = service_dechets src="./img/logo_dechets.png" alt="">
+                        <br>
+                        <img id = "fil_jaune" src="./img/fil_jaune.png" alt=""> 
+                        <span>
+                            <strong>Communnauté d'Agglomération du Beauvaisis</strong>
+                            <br>
+                            "48 rue Desgroux - BP 90508"
+                            <br>
+                            " 60005 Beauvais Cedex"
+                        </span>
+                        <br>
+                        <br>
+                        <span>
+                            "Services Techniques "
+                            <br>
+                            "78 rue du Tilloy à Beauvais"
+                            <br>
+                        </span>
+
+                    </div>
+                </footer>
+            </div>
+
+            <div class="PageD" id = "D_menager"> <!--A faire apparaître en cliquant un des onglets-->
+                <h1 class="titre">La collecte des déchets ménagers</h1>
+
+                <div id="description">
+                    <p class="txt">
+                        Fini les hésitations au moment de trier nos déchets ! 
+                        Vous pouvez mettre dorénavant tous vos emballages plastiques et métalliques 
+                        et tous vos papiers et cartons ensemble dans le même bac jaune.
+                    </p>
+                    <p class="txt">Désormais, c’est plus simple,
+                            TOUS les emballages et TOUS les papiers se trient, ce qui comprend 
+                            EN PLUS tous les autres emballages : les pots de yaourt et de crème, 
+                            les barquettes, les films, les éco-recharges, les capsules et couvercles métalliques…
+                    </p>
+                    <p class="txt">
+                        <strong style=" font-size: 18px;">Le seul <span style="color: #f1c00b;"> bac jaune</span>
+                            pour + de tri </strong><br> <br> 
+                            Votre actuel bac jaune pourra donc être remplacé pour 
+                            correspondre à vos besoins selon la composition de votre foyer. Un courrier vous sera adressé 
+                            pour vous informer des modalités et des dates de livraison de votre nouveau bac jaune 
+                            (entre mars et juin 2019). <br> En attendant la livraison de votre nouveau bac, vous pourrez
+                            utiliser votre actuel bac bleu, en complément de votre actuel bac jaune, en y mélangeant 
+                            également tous les emballages/papiers/cartons ; ils seront collectés le même jour, dans la même benne..
+                    </p>
+
+                </div>
+                <div class="vide"></div>
+
+                <h3 id="CalCol">Calendrier des collectes</h3>
+                <br>
+                <h4 id="CQuartier">Téléchargement (Format PDF)</h4>
+
+                <div class="hero">
+                    <div class="btn-box">
+                        <button  id="btn1"> 
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Quartiers de Beauvais
+                        </button>
+                        <button id="btn2">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Communes Rurales
+                        </button>
+                    </div>
+                    <div class="vide"></div>
+                    <div id="QBeauvais" class="content">
+                        <div class="container">
+                            <div class="slidder-wrapper">
+                                <div  class="calColl">
+            
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./img/a-drop-of-pink-and-yellow-paint-in-water.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Beauvais Centre Ville</h5>
+                                            <a href="./pdf/2023b-collecte-bvs-centre-ville.pdf" class="btn btn-primary">Télécharger</a>
+                                        </div>
+                                    </div>
+            
+                                    <div class="card" style="width: 18rem;">
+                                        <img src=" ./img/a-drop-of-pink-and-yellow-paint-in-water.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Beauvais Hyper Centre</h5>
+                                                
+                                            <a href="./pdf/2023b-collecte-bvs-hyper-centre.pdf" class="btn btn-primary">Télécharger</a>
+                                        </div>
+                                    </div>
+            
+                                    <div class="card" style="width: 18rem;">
+                                        <img src=" ./img/a-drop-of-pink-and-yellow-paint-in-water.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Beauvais Nord-Est</h5>
+                                                
+                                            <a href="./pdf/2023b-collecte-bvs-nord-est.pdf" class="btn btn-primary">Télécharger</a>
+                                        </div>
+                                    </div>
+            
+                                    <div class="card" style="width: 18rem;">
+                                        <img src=" ./img/a-drop-of-pink-and-yellow-paint-in-water.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Beauvais Nord-Ouest</h5>
+                                                
+                                            <a href="./pdf/2023b-collecte-bvs-nord-ouest.pdf" class="btn btn-primary">Télécharger</a>
+                                        </div>
+                                    </div>
+            
+                                    <div class="card" style="width: 18rem;">
+                                        <img src=" ./img/a-drop-of-pink-and-yellow-paint-in-water.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Beauvais Sud-Est</h5>
+                                                
+                                            <a href="./pdf/2023b-collecte-bvs-sud-est.pdf" class="btn btn-primary">Télécharger</a>
+                                        </div>
+                                    </div>
+            
+                                    <div class="card" style="width: 18rem;">
+                                        <img src=" ./img/a-drop-of-pink-and-yellow-paint-in-water.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Beauvais Sud-Ouest</h5>
+                                                
+                                            <a href="./pdf/2023b-collecte-bvs-sud-ouest.pdf" class="btn btn-primary">Télécharger</a>
+                                        </div>
+                                    </div>
+            
+                                    <div class="card" style="width: 18rem;">
+                                        <img src=" ./img/a-drop-of-pink-and-yellow-paint-in-water.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Zones industrielles</h5>
+                                                
+                                            <a href="./pdf/2023-collecte-bvs-zi.pdf" class="btn btn-primary">Télécharger</a>
+                                        </div>
+                                    </div>
+            
+                                </div>
+                                <button id="gauche" class="btnCar"> < </button>
+                                <button id="droite" class="btnCar"> > </button>
+                            </div>
+            
+                        </div>
+                    </div>
+
+
+                    <div id="CRurales" class="content">
+                        <div id="btnRurales"><br>
+        
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur3.pdf" target="_blank" class="btnCRurales" >Allonne</a></div>
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur1.pdf" target="_blank" class="btnCRurales" >Auchy-la-Montagne</a></div>  
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur5.pdf" target="_blank" class="btnCRurales" >Auneuil</a> </div>   
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur3.pdf" target="_blank" class="btnCRurales" >Auteuil</a> </div>   
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur6.pdf" target="_blank" class="btnCRurales" >Aux Marais</a> </div>
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-ccrb-collecte-bailleul.pdf" target="_blank" class="btnCRurales" >Bailleul-sur-Thérain</a></div>   
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur3.pdf" target="_blank" class="btnCRurales" >Berneuil-en-Bray</a>  </div> 
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur8.pdf" target="_blank" class="btnCRurales" >Bonlier</a> </div>   
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur8.pdf" target="_blank" class="btnCRurales" >Bresles</a>  </div>  
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur1.pdf" target="_blank" class="btnCRurales" >Crèvecœur-le-Grand</a> </div>
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur2.pdf" target="_blank" class="btnCRurales" >Fontaine-Saint-Lucien</a> </div> 
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur7.pdf" target="_blank" class="btnCRurales" >Fouquenies</a> </div>
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-ccrb-collecte-secteur-nord.pdf" target="_blank" class="btnCRurales" >Fouquerolles</a>   </div>
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur1.pdf" target="_blank" class="btnCRurales" >Francastel</a>  </div>   
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur3.pdf" target="_blank" class="btnCRurales" >Frocourt</a> </div>  
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur6.pdf" target="_blank" class="btnCRurales" >Goincourt</a> </div> 
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur2.pdf" target="_blank" class="btnCRurales" >Guignecourt</a> </div>   
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-ccrb-collecte-secteur-nord.pdf" target="_blank" class="btnCRurales" >Haudivillers</a>    </div>   
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur7.pdf" target="_blank" class="btnCRurales" >Herchies</a> </div>  
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur6.pdf" target="_blank" class="btnCRurales" >Hermes</a> </div>
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur2.pdf" target="_blank" class="btnCRurales" >Juvignies</a> </div> 
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-ccrb-collecte-secteur-est.pdf" target="_blank" class="btnCRurales" >La Neuville-en-Hez</a> </div> 
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-ccrb-collecte-secteur-est.pdf" target="_blank" class="btnCRurales" >La Rue-Saint-Pierre</a> </div>
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur1.pdf" target="_blank" class="btnCRurales" >Lachaussée-du-Bois-d’Écu</a> </div>  
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-ccrb-collecte-secteur-nord.pdf" target="_blank" class="btnCRurales" >Lafraye</a> </div>   
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-ccrb-collecte-laversines.pdf" target="_blank" class="btnCRurales" >Laversines</a> </div>  
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-ccrb-collecte-secteur-nord.pdf" target="_blank" class="btnCRurales" >Le Fay-Saint-Quentin</a> </div>  
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur7.pdf" target="_blank" class="btnCRurales" >Le Mont-Saint-Adrien</a> </div>  
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur1.pdf" target="_blank" class="btnCRurales" >Le Saulchoy</a> </div>   
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-ccrb-collecte-secteur-est.pdf" target="_blank" class="btnCRurales" >Litz</a> </div>   
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur1.pdf" target="_blank" class="btnCRurales" >Luchy</a> </div> 
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur2.pdf" target="_blank" class="btnCRurales" >Maisoncelle-Saint-Pierre</a> </div>  
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur2.pdf" target="_blank" class="btnCRurales" >Maulers</a> </div>   
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur7.pdf" target="_blank" class="btnCRurales" >Milly-sur-Thérain</a> </div> 
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur2.pdf" target="_blank" class="btnCRurales" >Muidorge</a> </div>  
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur8.pdf" target="_blank" class="btnCRurales" >Nivillers</a> </div> 
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur7.pdf" target="_blank" class="btnCRurales" >Pierrefitte-en-Beauvaisis</a> </div> 
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur5.pdf" target="_blank" class="btnCRurales" >Rainvillers</a> </div>   
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-ccrb-collecte-secteur-est.pdf" target="_blank" class="btnCRurales" >Remerangles</a> </div>
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur4.pdf" target="_blank" class="btnCRurales" >Rochy-Condé</a>  </div>  
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur1.pdf" target="_blank" class="btnCRurales" >Rotangy</a> </div>   
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur5.pdf" target="_blank" class="btnCRurales" >Saint-Germain-la-Poterie</a> </div>  
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur6.pdf" target="_blank" class="btnCRurales" >Saint-Léger-en-Bray</a> </div>   
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur6.pdf" target="_blank" class="btnCRurales" >Saint-Martin-le-Noeud</a> </div> 
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur5.pdf" target="_blank" class="btnCRurales" >Saint-Paul</a> </div>
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur7.pdf" target="_blank" class="btnCRurales" >Savignies</a> </div> 
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur4.pdf" target="_blank" class="btnCRurales" >Therdonne</a> </div> 
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur8.pdf" target="_blank" class="btnCRurales" >Tillé</a> </div> 
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur2.pdf" target="_blank" class="btnCRurales" >Troissereux</a> </div>   
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-ccrb-collecte-secteur-nord.pdf" target="_blank" class="btnCRurales" >Velennes</a> </div>  
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur2.pdf" target="_blank" class="btnCRurales" >Verderel-les-Sauqueuse</a> </div>
+                            <div class = "btnCommunes"> <a href="http://www.beauvaisis.fr/docs/dechets/collecte/2023/2023-collecte-communes-secteur4.pdf" target="_blank" class="btnCRurales" >Warluis</a></div>    
+                        </div>
+                    </div>
+                </div>
+
+                
+                
+                <div class="vide"></div>
+    
+
+                
+                <div class="vide"></div>
+                <footer>
+                    <p id="renseignement">Pour tout renseignement sur la collecte, n'hésitez pas à nous contacter :</p>
+                    <div id = "infoFooter">
+                        <img id = service_dechets src="./img/logo_dechets.png" alt="">
+                        <br>
+                        <img id = "fil_jaune" src="./img/fil_jaune.png" alt=""> 
+                        <span>
+                            <strong>Communnauté d'Agglomération du Beauvaisis</strong>
+                            <br>
+                            48 rue Desgroux - BP 90508
+                            <br>
+                            60005 Beauvais Cedex
+                        </span>
+                        <br>
+                        <br>
+                        <span>
+                            Services Techniques 
+                            <br>
+                            78 rue du Tilloy à Beauvais
+                            <br>
+                        </span>
+
+                    </div>
+                </footer>
+            </div>
+
+            <div class="PageD" id = "D_verre"> <!--A faire apparaître en cliquant un des onglets-->
+                <div class="vide"></div>
+                <footer>
+                    <p id="renseignement">Pour tout renseignement sur la collecte, n'hésitez pas à nous contacter :</p>
+
+                    <div id = "infoFooter">
+                    <img src="./img/logo_dechets.png" alt="">
+                    <div>
+                        <p id = "CAB">Communauté d'Agglomération du Beauvaisis</p>
+                        <p id = "adresse_CAB">48 rue Desgroux - BP 90508 <br>
+                            60005 Beauvais Cedex <br> <br> <br></p>
+                        <p id="ST">Services Techniques <br>
+                            78 rue du Tilloy à Beauvais</p>
+                    </div>
+                    <img id = "fil_jaune" src="./img/fil_jaune.png" alt=""> 
+
+                    </div>
+            </footer>
+            </div>
+
+            <div class="PageD" id = "D_vegetaux"> <!--A faire apparaître en cliquant un des onglets-->
+                <div class="maintenance">
+                    <div>
+                        <img src="./img/maintenance.png" alt="">
+                        <p>Page en cours de maintenance</p>
+                    </div>
+                </div>
+                
+                <div class="vide"></div>
+                <footer>
+                    <p id="renseignement">Pour tout renseignement sur la collecte, n'hésitez pas à nous contacter :</p>
+                    <div id = "infoFooter">
+                    <img src="./img/logo_dechets.png" alt="">
+                    <div>
+                        <p id = "CAB">Communauté d'Agglomération du Beauvaisis</p>
+                        <p id = "adresse_CAB">48 rue Desgroux - BP 90508 <br>
+                            60005 Beauvais Cedex <br> <br> <br></p>
+                        <p id="ST">Services Techniques <br>
+                            78 rue du Tilloy à Beauvais</p>
+                    </div>
+                    <img id = "fil_jaune" src="./img/fil_jaune.png" alt=""> 
+
+                    </div>
+            </footer>
+            </div>
+
+            <div class="PageD" id = "D_encombrant"> <!--A faire apparaître en cliquant un des onglets-->
+                <div class="vide"></div>
+                <footer>
+                    <p id="renseignement">Pour tout renseignement sur la collecte, n'hésitez pas à nous contacter :</p>
+
+                    <div id = "infoFooter">
+                    <img src="./img/logo_dechets.png" alt="">
+                    <div>
+                        <p id = "CAB">Communauté d'Agglomération du Beauvaisis</p>
+                        <p id = "adresse_CAB">48 rue Desgroux - BP 90508 <br>
+                            60005 Beauvais Cedex <br> <br> <br></p>
+                        <p id="ST">Services Techniques <br>
+                            78 rue du Tilloy à Beauvais</p>
+                    </div>
+                    <img id = "fil_jaune" src="./img/fil_jaune.png" alt=""> 
+
+                    </div>
+            </footer>
+            </div>
+
+            <div class="PageD" id = "D_compostage"> <!--A faire apparaître en cliquant un des onglets-->
+                <div id="compost_contenu">
+
+                    <h3 class = "titre">Le Compostage</h3>
+                    <p>Le compostage domestique : une astuce pour réduire le poids de sa poubelle !</p>
+
+                    <div id="info_compost">
+                        <div class="compost" id="individuel">
+                            <p>Le compostage individuel</p>
+                            <button><a href="https://www.beauvaisis.fr/collecte-des-dechets/compostage-individuel.html#dectop">Plus d'infos</a></button>
+                        </div>
+                        <div class="compost" id="partage">
+                            <p>Le compostage partagé</p>
+                            <button><a href="https://www.beauvaisis.fr/collecte-des-dechets/compostage-partage.html#dectop">Plus d'infos</a></button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <div class="vide"></div>
+                <footer>
+                    <p id="renseignement">Pour tout renseignement sur la collecte, n'hésitez pas à nous contacter :</p>
+
+                    <div id = "infoFooter">
+                    <img src="./img/logo_dechets.png" alt="">
+                    <div>
+                        <p id = "CAB">Communauté d'Agglomération du Beauvaisis</p>
+                        <p id = "adresse_CAB">48 rue Desgroux - BP 90508 <br>
+                            60005 Beauvais Cedex <br> <br> <br></p>
+                        <p id="ST">Services Techniques <br>
+                            78 rue du Tilloy à Beauvais</p>
+                    </div>
+                    <img id = "fil_jaune" src="./img/fil_jaune.png" alt=""> 
+
+                    </div>
+            </footer>
+            </div>
+
+            <div class="PageD" id = "D_pverts"> <!--A faire apparaître en cliquant un des onglets-->
+                <div class="maintenance">
+                    <div>
+                        <img src="./img/maintenance.png" alt="">
+                        <p>Page en cours de maintenance</p>
+                    </div>
+                </div>
+                
+                <div class="vide"></div>
+                <footer>
+                    <p id="renseignement">Pour tout renseignement sur la collecte, n'hésitez pas à nous contacter :</p>
+                    <div id = "infoFooter">
+                    <img src="./img/logo_dechets.png" alt="">
+                    <div>
+                        <p id = "CAB">Communauté d'Agglomération du Beauvaisis</p>
+                        <p id = "adresse_CAB">48 rue Desgroux - BP 90508 <br>
+                            60005 Beauvais Cedex <br> <br> <br></p>
+                        <p id="ST">Services Techniques <br>
+                            78 rue du Tilloy à Beauvais</p>
+                    </div>
+                    <img id = "fil_jaune" src="./img/fil_jaune.png" alt=""> 
+
+                    </div>
+            </footer>
+            </div>
+
+            <div class="PageD" id = "D_guide"> <!--A faire apparaître en cliquant un des onglets-->
+                <div class="vide"></div>
+                <footer>
+                    <p id="renseignement">Pour tout renseignement sur la collecte, n'hésitez pas à nous contacter :</p>
+
+                    <div id = "infoFooter">
+                    <img src="./img/logo_dechets.png" alt="">
+                    <div>
+                        <p id = "CAB">Communauté d'Agglomération du Beauvaisis</p>
+                        <p id = "adresse_CAB">48 rue Desgroux - BP 90508 <br>
+                            60005 Beauvais Cedex <br> <br> <br></p>
+                        <p id="ST">Services Techniques <br>
+                            78 rue du Tilloy à Beauvais</p>
+                    </div>
+                    <img id = "fil_jaune" src="./img/fil_jaune.png" alt=""> 
+
+                    </div>
+            </footer>
+            </div>
+
+        </div>
+<!--------------------------------------------Fin page déchet----------------------------------->
+
+        <div class="separation"></div>
+
+
+
+<!--------------------------------------------Début assainissement----------------------------------->
+
+        <div id = "assainissement">
+            <h2 class="sousTitre">Assainissement</h2>
+            <div id="Assain_contenu">
+
+                <div class="collec">
+                    <div class="assain im">
+    
+                    </div>
+                    <div class="assain">
+                        <h4 class="sousTitre">Assainissement Non Collectif</h4> <br>
+                        <p class="assain_txt">
+                            L’assainissement non collectif correspond à tout système d’assainissement effectuant la collecte, le prétraitement, l’épuration, l’infiltration ou le rejet des eaux usées domestiques des immeubles non raccordés au réseau public d’assainissement.
+                            <br><br>
+                            Sur la communauté d’agglomération environ 4000 logements sont concernés.
+                            <br><br>
+                            L’assainissement non collectif est une solution d’assainissement à part entière. Au même titre qu’un véhicule, un assainissement individuel s’entretient et se contrôle régulièrement.
+                            </p>
+                        <a class="SavoirP" href="">En savoir plus</a>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="collec">
+                    <div class="assain" >
+                        <h4 class="sousTitre">Assainissement Collectif</h4> <br>
+                        <p class="assain_txt">
+                            Pour l’assainissement collectif, l’unité contrôles de branchement du service assainissement intervient dans le contrôle de conformité des raccordements des installations privées aux réseaux d’assainissement collectif pour chaque vente d’un bien immobilier.
+                            <br><br>
+                            Le rapport de contrôle de conformité datant de moins de 3 ans vous sera demandé par 
+                            le notaire au plus tard lors de la signature de l’acte de vente Ce contrôle doit impérativement
+                            être réalisé par un agent de l’unité contrôle du service assainissement de la communauté 
+                            d’agglomération du Beauvaisis, aucun autre établissement n’est habilité à exécuter ce
+                            diagnostic.
+
+                        </p>
+                        <a class="SavoirP" href="">En savoir plus</a>
+                    </div>
+                    <div class="assain im">
+    
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="separation"></div>
+        <!--------------------------------------------Début carte assainissement----------------------------------->
+
+        <div id = "gestion_assai">
+            <h3 class="sousTitre">Mode de gestion de l'assainissement</h3>
+            <div id="cartes_assain">
+                <img class="cAssai" id ="carte_assai1" src="./img/1605-carte-assainissment.png" alt="Assainissement Beauvaisis">
+                <img class="cAssai" id ="carte_assai2" src="./img/carte-assainissement2.png" alt="Assainissement Beauvaisis">
+            </div>
+
+        </div>
+        <!--------------------------------------------Fin carte assainissement----------------------------------->
+        
+<!--------------------------------------------Fin assainissement----------------------------------->
+
+<!--------------------------------------------Début footer----------------------------------->
+
+        <footer class="banniere">
+            <div class="arrow">
+                <div class="square"></div>
+                <div class="triangle"></div>
+            </div>
+        </footer>
+<!--------------------------------------------Fin footer----------------------------------->
+
+        <script src="../commun/commun.js"></script>
+        <script type="module" src="./js/ecologie.js"></script>
+        <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>

@@ -14,7 +14,7 @@ function CreateNavBar(){
         link=document.createElement("a");
         link.innerText=lstBtnSections[i];
         link.classList.add("btnMenu");
-        if(i<=3){
+        if(i<=4){
             rep=lstBtnSections[i].toLowerCase()
             link.href=`../${rep}/${rep}.html`;
         }

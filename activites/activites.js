@@ -124,7 +124,7 @@ for(let i = 0; i <4;i++){
 const Observe=new IntersectionObserver((entries)=>{
     for(const entry of entries){
         console.log(entry)
-        if(entry.isIntersecting){
+        if(entry.isIntersecting &&!x.matches){
             Site.forEach(s=>{
                 s.style.animation="slide_right 1s";
                 s.addEventListener("animationend",()=>{
@@ -138,11 +138,13 @@ const Observe=new IntersectionObserver((entries)=>{
 Site.forEach(s=>{
     Observe.observe(s);
 })
+var x=window.matchMedia("(max-width:600px)")
+console.log(x.matches)
 
 const Obs=new IntersectionObserver((entries)=>{
     for(const entry of entries){
         console.log(entry)
-        if(entry.isIntersecting){
+        if(entry.isIntersecting &&!x.matches){
             AllLoisir.forEach(l=>{
             l.style.animation="slide_right 1s";
                 l.addEventListener("animationend",()=>{
@@ -152,9 +154,15 @@ const Obs=new IntersectionObserver((entries)=>{
             }
         }
     }
-)
+) 
+
+
+
+    
+
 AllLoisir.forEach(l=>{
     Obs.observe(l);
 })
+
 console.log(SiteToursContainer);
 

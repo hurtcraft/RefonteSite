@@ -470,6 +470,7 @@ i{
     box-shadow: -10px 10px 10px #1F1F1F;
     transition: 0.5s;
     transform: rotate3d(1,1,1,25deg);
+    
 }
 .kiosqueLink img:hover{
     transform: translateY(-30%);

@@ -126,7 +126,7 @@
 }
 .footerItem{
     width: 30%;
-    height: 100%;
+    height: 70%;
     display: flex;
     justify-content: center;
     transform: translateY(20%);

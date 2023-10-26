@@ -1,60 +1,4 @@
 
-
-
-/*************************************************Onglets déchets*********************************************/
-#onglets{
-    position: relative;
-}
-
-#onglets_dechets{
-    display: flex;
-    height: 30vh;
-    margin: 0 auto;
-    box-shadow: -4px 5px 15px 6px rgba(0,0,0,0.3);
-    width: 80%;
-    position: absolute;
-    z-index: 10;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-
-#onglets_dechets button{
-
-    height: 100%;
-    width: 12.5%;
-    border: none;
-    position: relative;
-    padding: 2vw 4.5vh;
-    background-color: white;
-    color: #1F1F1F;
-    text-decoration: none;
-}
-
-#onglets_dechets button p {
-    font-size: 1.3em;
-    margin-top: 2%;
-    text-align: center;
-}
-
-
-#onglets_dechets button:hover{   
-    background-color: #CF1414;
-    color: #ffffff;
-    height: 35vh;
-    bottom: 8%;
-
-
-}
-
-
-#rouge{
-    height: 15vh;
-    background-color: #b41111;
-}
-
-/*******************************Fin onglets déchets*********************************************/
-
 .vide{
     height: 8vh;
 }
@@ -66,40 +10,50 @@
 }
 
 
-/********************Assainissement***********************/
-
-
-
 .sousTitre{
+    color: #CF1414;
     text-align: center;
     font-weight: bold;
 }
 
-#assainissement h2{
-    margin-bottom: 3%;
-}
-
-#assainissement #Assain_contenu .collec{
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0px;
-    width: 82%;
+/********************Assainissement***********************/
+#assainissement{
+    width: 70%;
     margin: 0 auto;
 }
 
-#assainissement #Assain_contenu .collec .im{
-    background-color: black;
-}
 
-
-#assainissement #Assain_contenu .collec .assain{
+.Assainimg .img{
     width: 40vw;
-
-
+    height: 50vh;
 }
 
-#assainissement #Assain_contenu .collec .assain .SavoirP{
+.img{
+    width: 100%;
+    height: 100%;
+}
+
+.assainContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+    
+
+.titleAssain{
+    margin-left: 8%;
+    margin-top: 6%;
+    margin-bottom: 2%;
+    font-weight: bold;
+}
+
+.assain_txt{
+    height: 40%;
+}
+
+.SavoirP{
     margin-top: 2%;
     margin-right: 5%;
     text-decoration: none;
@@ -109,22 +63,9 @@
     padding: 1% 5%;
     border-radius: 20px;
     position: relative;
-    float: right;
 
 }
 
-#assainissement #Assain_contenu .collec .assain .SavoirP:hover{
-    text-decoration: none;
-    color: white;
-    background-color: #b41111;
-}
-
-#assainissement #Assain_contenu .collec .assain .assain_txt{
-    text-align: center;
-    width: 90%;
-    margin: 0 auto;
-
-}
 /************* Début Gestion Assainissement/*************/
 
 #gestion_assai #cartes_assain {
@@ -149,3 +90,65 @@
 }
 /************* Fin Gestion Assainissement/*************/
 /********************Fin assainissement***************************/
+
+@media (max-width: 1150px) {
+    .Assainimg .img{
+        height: 40vh;
+        width: 50vw;
+    }
+    #assainissement{
+        display: block;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .titleAssain{
+        margin-left: 0%;
+        text-align: center;
+        margin-top: 10%;
+        margin-bottom: 2%;
+        font-weight: bold;
+    }
+
+    .assain{
+        display: block;
+        flex-direction: column;
+        width: 80%;
+        height: 80%;
+
+    }
+
+    .assainContent{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 5%;
+    }
+
+}
+
+
+@media(max-width:801px){
+    #gestion_assai #cartes_assain {
+        width: 100%;
+    }
+
+
+    #assainissement #Assain_contenu .collec{
+        display: block;
+
+
+        margin: 0 auto;
+    }
+
+    .txtAssain{
+        margin: 0 auto;
+    }
+}
+
+/********************Début responsive***************************/
+
+
+/********************Fin responsive***************************/

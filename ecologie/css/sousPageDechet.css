@@ -1,4 +1,63 @@
+/*************************************************Onglets déchets*********************************************/
+
+
+#onglets{
+    position: relative;
+}
+
+#onglets_dechets{
+    display: flex;
+    height: 30vh;
+    margin: 0 auto;
+    box-shadow: -4px 5px 15px 6px rgba(0,0,0,0.3);
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#onglets_dechets button{
+
+
+    width: 12.5%;
+    border: none;
+    position: relative;
+    padding: 2vw 4.5vh;
+    background-color: white;
+    color: #1F1F1F;
+    text-decoration: none;
+}
+
+#onglets_dechets button p {
+    font-size: 0.8em;
+    margin-top: 2%;
+    text-align: center;
+}
+
+
+#onglets_dechets button:hover{   
+    background-color: #CF1414;
+    color: #ffffff;
+    height: 35vh;
+    bottom: 8%;
+}
+
+
+#rouge{
+    height: 15vh;
+    background-color: #b41111;
+}
+
+/*******************************Fin onglets déchets*********************************************/
+
+
+
+
+
 /**********************************Début page déchets******************************************/
+
+
 
 .titre{
 
@@ -74,8 +133,8 @@
 
 
 /********************Fin Caroussel*******************************/
-/********************Début Footer*******************************/
-.PageD footer #renseignement{
+/********************Début Footer Déchets*******************************/
+.PageD footer .renseignement{
 
     text-align: center;
     padding: 2vh;
@@ -84,27 +143,23 @@
     letter-spacing: 1px;
 }
 
-.PageD footer #infoFooter{
+.PageD footer .infoFooter{
     width: 60%;
     margin: 0 auto;
 }
 
-.PageD footer #service_dechets{
+.PageD footer .service_dechets{
     padding: 2px;
     float: left;
     margin-left: 20px;
+    margin-top: 5%;
 }
 
-.PageD footer #fil_jaune{
+.PageD footer .fil_jaune{
     float: right;
     margin-left: 10px;
 }
 
-.PageD footer #infoFooter div, .PageD footer #infoFooter img{
-
-    padding-left: 0.5vw;
-    display: inline-block;
-}
 
 #CAB{
     font-weight:bold; 
@@ -115,17 +170,19 @@
 }
 
 
-/********************Fin Footer*******************************/
+/********************Fin Footer Déchets*******************************/
 
 /********************Début page maintenance*******************************/
-
 
 .maintenance div{
     margin: 5% auto;
     width: 18%;
 } 
 
-
+.maintenance div img{
+    margin: 5% auto;
+    width: 100%
+} 
 
 
 .maintenance div p{
@@ -203,10 +260,6 @@
     margin-right: 15px;
 }
 
-#D_menager .hero .btn-box #btn1{
-    color: #CF1414;
-}
-
 
 
 #D_menager .hero .btn-box button:hover .fa-solid{
@@ -274,33 +327,92 @@
 
 /********************Fin déchet menagers************/
 /********************Début verre********************/
-#D_verre{
-    display: none;
-}
 
 
 /********************Fin verre*********************/
 /********************Début vegetaux*****************/
-#D_vegetaux{
-    display: none;
-}
+
 
 
 /********************Fin vegetaux*******************/
 /********************Début encombrants************/
-#D_encombrant{
-    display: none;
-}
+
 
 
 /********************Fin encombrants****************/
 /********************Début compostage*****************/
-#D_compostage{
-    display: none;
+
+#info_compost{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.carte{
+    width: 25vw;
+    height: 50vh;
+    overflow: hidden;
+    border: 8px solid #1F1F1F;
+    border-radius: 25px;
+    position: relative;
+    margin: 5%;
+}
 
-#compost_contenu p{
+.carte:hover .carteBody{
+    right: 0;
+}
+
+.carte-img  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.carteBody{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    position: absolute;
+    background: #494545a8;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 1s;
+}
+
+.carteTitre{
+    font-size: 45px;
+    font-weight: 500;
+}
+
+.carteText{
+    font-size: 16px;
+    line-height: 25px;
+    margin: 40px 0;
+    font-weight: 400;
+}
+
+.carteBtn{
+    color: white;
+    background: #CF1414;
+    width: 7vw;
+    padding: 0.5vh 1vw;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+#compost_contenu #sousTitre{
 
     text-align: center;
     color: #1F1F1F ;
@@ -320,51 +432,116 @@
     background-color: #F0F0F0;
 
 }
-#info_compost button{
-    position: absolute;
-    bottom: 0;
-    background-color: #CF1414;
-    padding: 1% 5%;
-    clip-path: polygon(100% 30%, 90% 48%, 100% 70%, 25% 70%, 0% 50%, 25% 30%);
-    top: 50%; left: 50%; /* à 50%/50% du parent référent */
-    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
-    transition: 0.5s;
 
-}
 
-#info_compost button a{
-    color: white;
-    text-decoration: none;
-    margin: 0 auto;
-
-}
-
-#info_compost button:hover{
-    clip-path: polygon(75% 30%, 100% 50%, 75% 70%, 0 70%, 15% 50%, 0 30%);
-
-}
-
-#info_compost{
-    width: 51%;
-    margin: 2vh auto;
-}
-
-#individuel, #partage{
-    display:inline-block;
-}
 
 /********************Fin compostage*******************/
 /********************Début points verts***************/
-#D_pverts{
-    display: none;
 
-}
 /********************Fin points verts*****************/
 /********************Début guide**********************/
-#D_guide{
-    display: none;
-}
 
 
 /********************Fin guide************************/
-/**********************************Début page déchets******************************************/
+/**********************************Fin page déchets******************************************/
+
+/********************Début responsive***************************/
+@media(max-width:1151px){
+    .PageD{
+        width: 100%;
+    }
+
+    #onglets_dechets{
+        width: 100%;
+        z-index: 10;
+        position: inherit;
+        left: 0%;
+        transform: none;
+    }
+    
+    #onglets_dechets button p {
+        display: none;
+    }
+    
+    
+    #onglets_dechets button:hover{   
+        height: 32vh;
+        bottom: 3%;
+    }
+    
+    #rouge{
+        display: none;
+    }
+
+    .PageD footer #infoFooter{
+        width: 90%;
+    }
+
+
+    .carte{
+        width: 30vw;
+    }
+
+}
+
+
+
+@media(max-width:801px){  
+    #onglets_dechets{
+        display: block;
+        margin: 0 auto;
+        box-shadow: -4px 5px 15px 6px rgba(0,0,0,0.3);
+        width: 100%;
+        height: 80vh;
+
+    }
+    #onglets_dechets button{   
+        width: 100%;
+        height: 10vh;
+        
+    } 
+    #onglets_dechets button:hover{   
+        bottom: 0%;
+        height: 10vh;
+    }
+
+    .maintenance div{
+        width: 45%;
+    }
+
+    .PageD footer #renseignement{
+
+        text-align: center;
+        padding: 2vh;
+        background-color: #1F1F1F;
+        color: #ffffff;
+        letter-spacing: 1px;
+    }
+    
+    .PageD footer #infoFooter {
+        width: 79%;
+        margin: 0 auto;
+    }
+    
+
+    .PageD footer .service_dechets{
+        display: none;
+    }
+
+    .carte{
+        width: 90%;
+        height: 90vh;
+    }
+
+    #info_compost{
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .carteBtn{
+        width: auto;
+    }
+
+}
+/********************Fin responsive***************************/

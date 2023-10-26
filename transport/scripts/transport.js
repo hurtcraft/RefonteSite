@@ -241,7 +241,9 @@ function addHoverEffectQualite(icone) {
 // addPaddingToStart()
 
 function tarifHandler() {
+    const listTarif = ["JEUNE -19 ANS", "RETRAITÉ", "DEMANDEUR EMPLOI", "INVALIDITÉ + DE 80 %", "TOUT PUBLIC"]
     const nav = document.getElementById("NavBar")
+    const titre = document.getElementById("titreTarif")
     let barT = document.querySelector(".barT")
     busInTrafic.addEventListener("animationend", () => {
         busInTrafic.style.display = "none"
@@ -263,6 +265,7 @@ function tarifHandler() {
             busInTrafic.style.display = "block"
             // ------------------------------------------Animation de 180deg ne fonctionne pas j'ai la flemme
             let indexTarif = Array.prototype.indexOf.call(barT.children, element)
+            indexTarif -= 1
             let busIndex = parseInt(busInTrafic.getAttribute("index"));
             tarifContent.querySelectorAll("div")[busIndex].style.display = "none"
 
@@ -271,10 +274,12 @@ function tarifHandler() {
             //     busInTrafic.animate(flip, {duration : 0, fill : "forwards"})
             // }
             // tarifContent.innerText = tarifsText[indexTarif-1]
-            let tarifAfficher = tarifContent.querySelectorAll("div")[indexTarif - 1]
+            titre.innerText = listTarif[indexTarif]
+            let tarifAfficher = tarifContent.querySelectorAll("div")[indexTarif]
             tarifAfficher.style.display = "block"
-            busInTrafic.setAttribute("index", indexTarif - 1)
-            let animationDuration = { duration: 1000 * Math.abs(indexTarif - busIndex), fill: "forwards" }
+            
+            busInTrafic.setAttribute("index", indexTarif)
+            let animationDuration = { duration: 1000 * Math.abs(indexTarif - busIndex), fill: "forwards", easing: "ease-in-out"}
 
             busInTrafic.animate(animation, animationDuration);
             busInTrafic.animate(disapearAnim, animationDuration)
@@ -285,8 +290,22 @@ function tarifHandler() {
 }
 
 function addCardsAnimation() {
+    // const disappearAnimation = "disappearAt50 0.5s forwards"
+    // const appearAnimation = "appearAt50 0.5s forwards"
+    const disappearAnimation = {
+        opacity: [1, 1, 0],
+        offset: [0, 0.5, 0.75],
+    };
+    const appearAnimation = {
+        opacity: [0, 0, 1, 1],
+        offset: [0, 0.5, 0.75, 1],
+    }
+        // {opacity: 1, offset:0}, {opacity: 1, offset:0.5}, {opacity}
+
     cards.forEach((element) => {
         let text = element.querySelector("p");
+        let img = element.querySelector("img");
+        let titre = element.querySelector("h1");
         text.addEventListener("animationend", () => {
             if (!element.hasAttribute("turn")) {
                 text.style.display = "none"
@@ -295,17 +314,30 @@ function addCardsAnimation() {
         element.addEventListener("click", () => {
             if (element.hasAttribute("turn")) {
                 element.style.animation = "turn180To360 1s forwards";
-                text.style.animation = "disappearAt50 0.5s forwards"
+                text.style.animation = "disappearAt50 0.5s forwards";
+                img.style.animation = "appearAt50 0.3s forwards";
+                titre.style.animation = "appearAt50 0.3s forwards";
+
             }
             else {
                 element.style.animation = "turn0To180 1s forwards"
                 text.style.animation = "appearAt50 0.5s forwards"
                 text.style.display = "block"
+                img.style.animation = "disappearAt50 0.1s forwards"
+                titre.style.animation = "disappearAt50 0.1s forwards"
             }
             element.toggleAttribute("turn");
         })
-        element.addEventListener("animationend", () => {
-            //element.style.animation = ""
+        
+        img.addEventListener("animationend", ()=>{
+            if (element.hasAttribute("turn")){
+                img.style.visibility = "hidden";
+                titre.style.visibility = "hidden"
+            }
+            else{
+                img.style.visibility = "visible"
+                titre.style.visibility = "visible"
+            }
         })
     })
 }
@@ -319,11 +351,29 @@ function charteClickHandler() {
     })
 }
 
+function clickOnReseau() {
+    const reseau = document.querySelector(".reseau");
+    const plan = reseau.querySelector("img");
+    plan.addEventListener("click", ()=>{
+        open("img/transports/plan-du-reseau-132_page-0001.jpg")
+    })
+}
+
+function clickOnAeroport() {
+    const aero = document.querySelector(".aeroport");
+    const plan = aero.querySelector("img");
+    plan.addEventListener("click", ()=>{
+        open("https://www.aeroportparisbeauvais.com/passagers", "_blank")
+    })
+}
+
 function init() {
     addQualitesServices();
     tarifHandler();
     addCardsAnimation();
     charteClickHandler();
+    clickOnReseau();
+    clickOnAeroport();
     window.scrollTo(0, 0);
 }
 

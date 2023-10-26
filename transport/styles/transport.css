@@ -11,6 +11,10 @@
     /* outline: solid red; */
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .qualite > h1{
     color: red;
 }
@@ -87,6 +91,7 @@
     z-index: 0;
     position: relative;
     height: 3em;
+    cursor: pointer;
     /* top: 50%; */
     /* top : 50px */
     /* margin-top: 10%; */
@@ -189,6 +194,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    cursor: pointer;
 }
 
 .tarifContent{
@@ -200,12 +206,18 @@
     position: absolute;
     position: relative;
     display: none;
-    margin: 5em 0;
+    /* margin: 5em 0; */
+    padding-bottom: 2em;
     font-size: 1.2em;
+    color: var(--bg-color-black);
+}
+
+.tarifsContainer{
+    background-color: aliceblue;
 }
 
 .tarifContent a{
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 .jeune{
@@ -251,24 +263,60 @@
     left: 0%;
 }
 
-.keyNumbers .banniereContent{
+.keyNumbers{
+    background-color: aliceblue;
+    height: 50vh;
+    display: flex;
+    /* background-color: var(--bg-color-red); */
+    align-items: center;
     justify-content: space-evenly;
+    /* overflow-x: scroll; */
+    /* scroll-snap-type: x mandatory; */
 }
 
 .card{
+    /* scroll-snap-align: center; */
+    background-color: var(--bg-color-black);
     align-items: center;
     justify-content: center;
     outline: aliceblue solid 1px;
     border-radius: 5%;
-    width: min(33%, 300px);
+    height: 90%;
+    width: min(33vw, 300px);
+    /* width: 500px; */
+    cursor: pointer;
+}
+
+
+.titre{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.75rem;
+    text-decoration: underline;
+    background-color: aliceblue;
+    padding-bottom: 50px;
+}
+
+.titreTarif{
+    background-color: var(--bg-color-black);
+    color: aliceblue;
 }
 
 .card img{
+    /* visibility: visible; */
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.card h1{
+    color: aliceblue;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 5%;
+}
+
 .card p{
     color: aliceblue;
     transform: rotateY(180deg);
@@ -279,8 +327,58 @@
 
 a#charte{
     text-decoration: underline;
+    cursor: pointer;
 }
 
+#titreTarif{
+    padding-top: 1em;
+}
+
+.plan{
+    padding: 0 5%;
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 5%;
+}
+
+.plan:nth-child(2){
+    flex-direction: row-reverse;
+}
+
+
+.plan img{
+    cursor: pointer;
+    width: 40vw;
+    height: 50vh;
+    object-fit: contain;
+    transition: transform 1s;
+}
+
+.plan img:hover{
+    transform: scale(1.2);
+}
+
+.textPlan{
+    text-align: center;
+}
+
+
+@media(max-width:1100px){
+    .plan, .plan:nth-child(2){
+        flex-direction: column;
+    }
+    .plan img{
+        width: 90%;
+        padding-bottom: 3em;
+    }
+    .container{
+        display: none;
+    }
+}
 @keyframes leftToRight {
     0%{
         transform: translateX(0);

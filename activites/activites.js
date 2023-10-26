@@ -24,7 +24,6 @@ function createLoisir(image,title){
     img.classList.add("imgLoisir");
     return div;
 }
-console.log(loisir)
 
 function Loisir(){
     for(let i = 0; i <4;i++){
@@ -50,12 +49,8 @@ var AllLoisir=loisir.querySelectorAll(".Loisir")
 var SiteToursContainer=document.querySelector(".SiteTouristiqueContainer");
 SiteToutisitique();
 const Site =SiteToursContainer.querySelectorAll(".SiteTouristique")
-console.log(Site)
 const div1=document.querySelector(".SiteTouristiqueContainer .SiteTouristique");
-console.log(div1);
-for (let index = 0; index < 3; index++) {
-    console.log();
-}
+
 function hoverSite(){
     for (let index = 0; index < 3; index++) {
         Site[index].addEventListener("mouseover",function(){
@@ -123,7 +118,6 @@ for(let i = 0; i <4;i++){
 }
 const Observe=new IntersectionObserver((entries)=>{
     for(const entry of entries){
-        console.log(entry)
         if(entry.isIntersecting &&!x.matches){
             Site.forEach(s=>{
                 s.style.animation="slide_right 1s";
@@ -139,11 +133,9 @@ Site.forEach(s=>{
     Observe.observe(s);
 })
 var x=window.matchMedia("(max-width:600px)")
-console.log(x.matches)
 
 const Obs=new IntersectionObserver((entries)=>{
     for(const entry of entries){
-        console.log(entry)
         if(entry.isIntersecting &&!x.matches){
             AllLoisir.forEach(l=>{
             l.style.animation="slide_right 1s";
@@ -164,5 +156,4 @@ AllLoisir.forEach(l=>{
     Obs.observe(l);
 })
 
-console.log(SiteToursContainer);
 

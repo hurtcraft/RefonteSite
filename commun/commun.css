@@ -119,6 +119,7 @@
     height: 7px;
     background-color: aliceblue;
     border-radius: 10px;
+    border: solid #1F1F1F 1px;
 }
 
 #footer{

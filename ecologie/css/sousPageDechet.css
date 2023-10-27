@@ -131,6 +131,13 @@
 
 }
 
+.card img{
+    height: 40%;
+    width: 90%;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
 .slidder-wrapper .calColl::-webkit-scrollbar{
     display: none;
 }

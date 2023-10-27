@@ -343,9 +343,10 @@ function addCardsAnimation() {
 }
 
 function charteClickHandler() {
+    const containerQualite = document.querySelector(".containerQualite");
     const nav = document.getElementById("NavBar")
     linkChart.addEventListener("click", (e) => {
-        window.scrollTo(0, qualitesServiceContainer.offsetTop - nav.getBoundingClientRect().height + 1);
+        window.scrollTo(0, containerQualite.offsetTop - nav.getBoundingClientRect().height + 1);
         e.preventDefault();
         e.stopPropagation()
     })
@@ -355,7 +356,7 @@ function clickOnReseau() {
     const reseau = document.querySelector(".reseau");
     const plan = reseau.querySelector("img");
     plan.addEventListener("click", ()=>{
-        open("img/transports/plan-du-reseau-132_page-0001.jpg")
+        open("img/transports/plan-du-reseau-132.pdf")
     })
 }
 
@@ -367,13 +368,41 @@ function clickOnAeroport() {
     })
 }
 
+function qualiteClique() {
+    const containerQualite = document.querySelector(".containerQualite");
+    const containerIcone = document.querySelector(".containerIcone");
+    const iconeQualites = containerQualite.querySelectorAll(".iconeQualite");
+    const textQualite = containerQualite.querySelectorAll(".qualiteText");
+    const lesCroix = document.querySelectorAll(".croix")
+    let i = 0;
+    iconeQualites.forEach((icone)=>{
+        icone.addEventListener("click", (e)=>{
+            containerQualite.classList.toggle("clique")
+            let iconeIndexClick = Array.prototype.indexOf.call(containerIcone.children, icone);
+            textQualite[iconeIndexClick].style.display = "block"
+        })
+        i++
+    })
+
+    lesCroix.forEach((element)=>{
+        element.addEventListener("click", (e)=>{
+            containerQualite.classList.toggle("clique")
+            setTimeout(()=>{
+                element.parentElement.style.display = "none"
+            }, 1100)
+        })
+    })
+}
+
+
 function init() {
-    addQualitesServices();
+    // addQualitesServices();
     tarifHandler();
     addCardsAnimation();
     charteClickHandler();
     clickOnReseau();
     clickOnAeroport();
+    qualiteClique();
     window.scrollTo(0, 0);
 }
 
